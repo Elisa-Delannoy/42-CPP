@@ -29,16 +29,53 @@ void	PhoneBook::add_contact(Contact contact)
 	this->i++;
 }
 
-void	PhoneBook::display_contact()
+void	PhoneBook::column(std::string element, int	j)
+{
+	if (element.length() > 9)
+		element.insert(9, ".");
+	element.resize(10, ' ');
+	std::cout << element;
+	if (j == 0)
+		std::cout << "|";
+	else
+		std::cout << "\n" << std::endl;
+}
+
+// void	PhoneBook::display_one_contact()
+// {
+
+// }
+
+void	PhoneBook::display_all_contact()
 {
 	size_t	i;
+	// std::string	test;
 
 	i = 0;
-	while (!this->list[i].get_first_name().empty())
+	column("\nindex", 0);
+	column("first name", 0);
+	column("last name", 0);
+	column("nickname", 1);
+	while (i < 8 && !this->list[i].get_first_name().empty())
 	{
-		std::cout << this->list[i].get_first_name();
+		std::cout << i << "        |";
+		column(this->list[i].get_first_name(), 0);
+		column(this->list[i].get_last_name(), 0);
+		column(this->list[i].get_nickname(), 1);
+		// std::cout << this->list[i].get_first_name();
 		i++;
 	}
-	std::cout << "bonjour\n";
+	if (i == 0)
+		std::cout << "\nPhonebook is empty\n";
+	else
+	{
+		std::cout << "Please select contact's index:";
+		// std::cin >> test;
+		// display_one_contact();
+	}
+
+		
+	
 	std::cout << std::endl;
+
 }

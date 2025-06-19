@@ -6,7 +6,7 @@
 /*   By: edelanno <edelanno@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 11:09:32 by edelanno          #+#    #+#             */
-/*   Updated: 2025/06/19 16:51:54 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/06/19 18:52:11 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,8 @@ class Contact
 	void		set_phone_number(const std::string &phone_number);
 	void		set_darkest_secret(const std::string &darkest_secret);
 	std::string	get_first_name(void)const;
-	
-	Contact		create_contact(void) const;
-	std::string	get_info();
+	std::string	get_last_name(void)const;
+	std::string	get_nickname(void)const;
 };
 
 

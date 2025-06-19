@@ -29,7 +29,9 @@ public:
 	~PhoneBook();
 
 	void	add_contact(Contact contact);
-	void	display_contact();
+	void	display_all_contact();
+	void	display_one_contact();
+	void	column(std::string element, int j);
 };
 
 #endif

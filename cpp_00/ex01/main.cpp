@@ -6,7 +6,7 @@
 /*   By: edelanno <edelanno@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 11:14:56 by edelanno          #+#    #+#             */
-/*   Updated: 2025/06/19 17:17:38 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/06/19 19:37:28 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,11 +44,6 @@ Contact	create_contact()
 	std::cout << std::endl;
 	return (contact);
 }
-void	display_contact()
-{
-	
-}
-
 
 int	select_cmd(std::string cmd, PhoneBook& phonebook)
 {
@@ -60,7 +55,7 @@ int	select_cmd(std::string cmd, PhoneBook& phonebook)
 		phonebook.add_contact(contact);
 	}
 	else if (cmd.compare("SEARCH") == 0)  
-		phonebook.display_contact();
+		phonebook.display_all_contact();
 	else if (cmd.compare("EXIT") == 0)  
 		std::cout << "OK";
 	else
@@ -71,12 +66,12 @@ int	select_cmd(std::string cmd, PhoneBook& phonebook)
 int	main()
 {
 	PhoneBook	phonebook;
-	// Contact		contacts;
 	std::string	user_entry;
 
 	while (1)
 	{
-		std::cout << "If you want to add a contact, write: \"ADD\"\n"
+		std::cout << "MANAGE PHONEBOOK\n"
+				 "If you want to add a contact, write: \"ADD\"\n"
 				 "If you want to display a contact, write: \"SEARCH\"\n"
 				 "If you want to quit and delete your contacts, write: \"EXIT\"\n"
 				 "\nPlease write your choice: ";

@@ -6,7 +6,7 @@
 /*   By: edelanno <edelanno@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 11:09:29 by edelanno          #+#    #+#             */
-/*   Updated: 2025/06/19 16:52:27 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/06/19 18:51:48 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 Contact::Contact()
 {
-	this->first_name = '\0';
-	this->last_name= '\0';
-	this->nickname= '\0';
-	this->phone_number= '\0';
-	this->darkest_secret= '\0';
+	this->first_name = "";
+	this->last_name = "";
+	this->nickname = "";
+	this->phone_number = "";
+	this->darkest_secret = "";
 }
 
 Contact::~Contact()
@@ -53,4 +53,14 @@ void	Contact::set_darkest_secret(const std::string &darkest_secret)
 std::string	Contact::get_first_name(void)const
 {
 	return (this->first_name);
+}
+
+std::string	Contact::get_last_name(void)const
+{
+	return (this->last_name);
+}
+
+std::string	Contact::get_nickname(void)const
+{
+	return (this->nickname);
 }
