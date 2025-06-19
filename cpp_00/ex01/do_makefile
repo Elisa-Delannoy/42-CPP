@@ -1,0 +1,6 @@
+#!/bin/bash
+
+MAKEFILE="Makefile"
+NEW_SOURCES=$(find . -type f -name "*.cpp" | sort | tr '\n' ' ')
+sed -i "/^SRC\s*=/c\SRC = $NEW_SOURCES" "$MAKEFILE"
+echo "Done"
