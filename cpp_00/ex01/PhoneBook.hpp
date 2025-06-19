@@ -16,14 +16,20 @@
 
 # include <iostream>
 # include <string>
+# include "Contact.hpp"
 
 class PhoneBook
 {
 private:
-	std::string	list[8];
+	Contact	list[8];
+	int		i;
+
 public:
-	PhoneBook(/* args */);
+	PhoneBook();
 	~PhoneBook();
+
+	void	add_contact(Contact contact);
+	void	display_contact();
 };
 
 #endif

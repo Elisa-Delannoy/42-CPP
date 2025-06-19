@@ -14,9 +14,31 @@
 
 PhoneBook::PhoneBook(/* args */)
 {
-	this->list[0] = '\0';
+	this->i = 0;
 }
 
 PhoneBook::~PhoneBook()
 {
+}
+
+void	PhoneBook::add_contact(Contact contact)
+{
+	if (this->i > 7)
+		this->i = 0;
+	this->list[this->i] = contact;
+	this->i++;
+}
+
+void	PhoneBook::display_contact()
+{
+	size_t	i;
+
+	i = 0;
+	while (!this->list[i].get_first_name().empty())
+	{
+		std::cout << this->list[i].get_first_name();
+		i++;
+	}
+	std::cout << "bonjour\n";
+	std::cout << std::endl;
 }
