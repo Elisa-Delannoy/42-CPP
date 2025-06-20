@@ -6,7 +6,7 @@
 /*   By: edelanno <edelanno@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 11:09:29 by edelanno          #+#    #+#             */
-/*   Updated: 2025/06/19 18:51:48 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/06/20 11:24:29 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,4 +63,14 @@ std::string	Contact::get_last_name(void)const
 std::string	Contact::get_nickname(void)const
 {
 	return (this->nickname);
+}
+
+std::string	Contact::get_phone_number(void)const
+{
+	return (this->phone_number);
+}
+
+std::string	Contact::get_darkest_secret(void)const
+{
+	return (this->darkest_secret);
 }

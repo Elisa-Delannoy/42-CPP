@@ -6,21 +6,32 @@
 /*   By: edelanno <edelanno@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 11:14:56 by edelanno          #+#    #+#             */
-/*   Updated: 2025/06/19 19:37:28 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/06/20 12:34:47 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
 #include "PhoneBook.hpp"
+#include <sstream>
 
-std::string		get_info()
+std::string		get_info(bool phone)
 {
 	std::string	answer;
+	int			number;
 
 	std::getline(std::cin, answer);
-	while (answer.empty())
+	while (answer.empty() || phone)
 	{
-		std::cout << "Please enter information, can not be empty: ";
+		if (answer.empty())
+			std::cout << "Please enter information, can not be empty: ";
+		else if (phone)
+		{
+			std::stringstream	i_answer(answer);
+			if (!(i_answer >> number))
+				std::cout << "Invalid phone number, please try again: ";
+			else
+				break;
+		}
 		std::getline(std::cin, answer);
 	}
 	return (answer);
@@ -32,15 +43,15 @@ Contact	create_contact()
 	Contact	contact;
 	
 	std::cout << "Your first name: ";
-	contact.set_first_name(get_info());
+	contact.set_first_name(get_info(0));
 	std::cout << "Your last name: ";
-	contact.set_last_name(get_info());
+	contact.set_last_name(get_info(0));
 	std::cout << "Your nickname: ";
-	contact.set_nickname(get_info());
+	contact.set_nickname(get_info(0));
 	std::cout << "Your phone number: ";
-	contact.set_phone_number(get_info());
+	contact.set_phone_number(get_info(1));
 	std::cout << "Your darkest secret: ";
-	contact.set_darkest_secret(get_info());
+	contact.set_darkest_secret(get_info(0));
 	std::cout << std::endl;
 	return (contact);
 }
