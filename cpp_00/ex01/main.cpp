@@ -6,15 +6,16 @@
 /*   By: edelanno <edelanno@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 11:14:56 by edelanno          #+#    #+#             */
-/*   Updated: 2025/06/20 12:34:47 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/06/20 15:18:10 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
 #include "PhoneBook.hpp"
 #include <sstream>
+#include <stdlib.h>
 
-std::string		get_info(bool phone)
+std::string	get_info(const bool& phone)
 {
 	std::string	answer;
 	int			number;
@@ -28,20 +29,20 @@ std::string		get_info(bool phone)
 		{
 			std::stringstream	i_answer(answer);
 			if (!(i_answer >> number))
-				std::cout << "Invalid phone number, please try again: ";
+				std::cout << "Invalid phone number (xx/xx/xx/xx/xx), please try again: ";
 			else
 				break;
 		}
 		std::getline(std::cin, answer);
 	}
-	return (answer);
-		
+	return (answer);	
 }
 
 Contact	create_contact()
 {	
 	Contact	contact;
 	
+	std::cout << std::endl;
 	std::cout << "Your first name: ";
 	contact.set_first_name(get_info(0));
 	std::cout << "Your last name: ";
@@ -68,7 +69,7 @@ int	select_cmd(std::string cmd, PhoneBook& phonebook)
 	else if (cmd.compare("SEARCH") == 0)  
 		phonebook.display_all_contact();
 	else if (cmd.compare("EXIT") == 0)  
-		std::cout << "OK";
+		exit(1);
 	else
 		return (0);
 	return (1);

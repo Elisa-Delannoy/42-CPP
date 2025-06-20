@@ -29,11 +29,11 @@ public:
 	PhoneBook();
 	~PhoneBook();
 
-	void	add_contact(Contact contact);
-	void	display_all_contact();
-	void	display_one_contact(int index);
-	void	column(std::string element, int j);
-	void	check_index();
+	void	add_contact(const Contact& contact);
+	void	display_all_contact(void)const;
+	void	display_one_contact(const int& index)const;
+	void	column(std::string element, const int& j)const;
+	void	check_index(void)const;
 };
 
 #endif

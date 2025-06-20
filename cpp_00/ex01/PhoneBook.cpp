@@ -13,7 +13,7 @@
 #include "PhoneBook.hpp"
 #include <sstream>
 
-PhoneBook::PhoneBook(/* args */)
+PhoneBook::PhoneBook()
 {
 	this->i = 0;
 	this->count = 0;
@@ -23,7 +23,7 @@ PhoneBook::~PhoneBook()
 {
 }
 
-void	PhoneBook::add_contact(Contact contact)
+void	PhoneBook::add_contact(const Contact& contact)
 {
 	if (this->i > 7)
 		this->i = 0;
@@ -33,19 +33,26 @@ void	PhoneBook::add_contact(Contact contact)
 		this->count++;
 }
 
-void	PhoneBook::column(std::string element, int	j)
+void	PhoneBook::column(std::string element, const int& j)const
 {
-	if (element.length() > 9)
+	if (element.length() > 10)
+	{
 		element.insert(9, ".");
-	element.resize(10, ' ');
+		element.resize(10, ' ');
+	}
+	else
+	{
+		while (element.length() < 10)
+			element.insert(0, " ");
+	}
 	std::cout << element;
 	if (j == 0)
 		std::cout << "|";
 	else
-		std::cout << "\n" << std::endl;
+		std::cout << std::endl;
 }
 
-void	PhoneBook::display_one_contact(int index)
+void	PhoneBook::display_one_contact(const int& index)const
 {
 	std::cout << "First name: " << this->list[index].get_first_name() << "\n";
 	std::cout << "Last name: " << this->list[index].get_last_name() << "\n";
@@ -55,14 +62,14 @@ void	PhoneBook::display_one_contact(int index)
 	std::cout << std::endl;
 }
 
-void	PhoneBook::check_index()
+void	PhoneBook::check_index(void)const
 {
 	int					index;
 	std::string			answer;
 	
 	while (1)
 	{
-		std::cout << "Please select contact's index: ";
+		std::cout << "\nPlease select contact's index: ";
 		std::getline(std::cin, answer);
 		std::stringstream	i_answer(answer);
 		if (!(i_answer >> index))
@@ -82,25 +89,29 @@ void	PhoneBook::check_index()
 	}
 }
 
-void	PhoneBook::display_all_contact()
+void	PhoneBook::display_all_contact(void)const
 {
 	int	i;
 
 	i = 0;
-	column("\nindex", 0);
-	column("first name", 0);
-	column("last name", 0);
-	column("nickname", 1);
 	while (i < 8 && !this->list[i].get_first_name().empty())
 	{
-		std::cout << i + 1 << "        |";
+		if (i == 0)
+		{
+			std::cout << "\n";
+			column("0123456789", 0);
+			column("first name", 0);
+			column("last name", 0);
+			column("nickname", 1);
+		}
+		std::cout << "         " << i + 1 << "|";
 		column(this->list[i].get_first_name(), 0);
 		column(this->list[i].get_last_name(), 0);
 		column(this->list[i].get_nickname(), 1);
 		i++;
 	}
 	if (i == 0)
-		std::cout << "\nPhonebook is empty\n";
+		std::cout << "\nPhonebook is empty\n" << std::endl;
 	else
 		check_index();
 }

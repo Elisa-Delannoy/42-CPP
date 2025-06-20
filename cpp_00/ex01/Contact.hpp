@@ -6,7 +6,7 @@
 /*   By: edelanno <edelanno@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 11:09:32 by edelanno          #+#    #+#             */
-/*   Updated: 2025/06/20 11:23:51 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/06/20 14:56:06 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,11 @@ class Contact
 		Contact();
 		~Contact();
 
-	void		set_first_name(const std::string &first_name);
-	void		set_last_name(const std::string &last_name);
-	void		set_nickname(const std::string &nickname);
-	void		set_phone_number(const std::string &phone_number);
-	void		set_darkest_secret(const std::string &darkest_secret);
+	void		set_first_name(const std::string& first_name);
+	void		set_last_name(const std::string& last_name);
+	void		set_nickname(const std::string& nickname);
+	void		set_phone_number(const std::string& phone_number);
+	void		set_darkest_secret(const std::string& darkest_secret);
 	std::string	get_first_name(void)const;
 	std::string	get_last_name(void)const;
 	std::string	get_nickname(void)const;
