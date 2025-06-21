@@ -5,26 +5,26 @@
 #                                                     +:+ +:+         +:+      #
 #    By: edelanno <edelanno@student.42perpignan.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/06/18 13:26:20 by edelanno          #+#    #+#              #
-#    Updated: 2025/06/21 16:58:39 by edelanno         ###   ########.fr        #
+#    Created: 2025/06/19 10:25:39 by edelanno          #+#    #+#              #
+#    Updated: 2025/06/21 18:36:48 by edelanno         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = megaphone
+NAME = account
 
 CPP = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC = ./megaphone.cpp
+SRC = ./Account.cpp ./tests.cpp
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)
 	@echo "\033[32mCompilation successful !\033[0m"
-
+	
 $(NAME): $(OBJ)
-	@$(CPP) $(FLAGS) $(OBJ) -o $(NAME)
+	@$(CPP) $(FLAGS) $(OBJ) -o $@
 
-%.o: %.cpp
+%.o:%.cpp
 	@echo "Compilating $@"
 	@$(CPP) $(FLAGS) -c $< -o $@
 

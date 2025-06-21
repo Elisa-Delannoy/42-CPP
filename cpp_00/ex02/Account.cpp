@@ -6,7 +6,7 @@
 /*   By: edelanno <edelanno@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/20 15:46:03 by edelanno          #+#    #+#             */
-/*   Updated: 2025/06/21 17:49:39 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/06/21 18:51:57 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 #include <string>
 #include <ctime>
 #include <vector>
-#include <chrono> 
 
 int Account::_nbAccounts = 0;
 int Account::_totalAmount = 0;
@@ -81,7 +80,7 @@ void	Account::makeDeposit(int deposit)
 	
 	_displayTimestamp();
 	std::cout << " index:" << this->_accountIndex << ";p_amount:" << p_amount <<
-	";deposits:" << deposit << ";amount:" << this->_amount <<";nb_deposits:" << this->_nbDeposits << std::endl;
+	";deposit:" << deposit << ";amount:" << this->_amount <<";nb_deposits:" << this->_nbDeposits << std::endl;
 }
 
 bool	Account::makeWithdrawal(int withdrawal)
@@ -124,9 +123,14 @@ void	Account::displayStatus()const
 
 void	Account::_displayTimestamp()
 {
-	std::time_t tt = std::chrono::system_clock::to_time_t (std::chrono::system_clock::now());
-	struct std::tm * ptm = std::localtime(&tt);
-	std::cout << "[" << std::put_time(ptm,"%G%m%e") << "_" << std::put_time(ptm,"%H%M%S") << "]";
+	char	buffer[20];
+	std::time_t time = std::time(NULL);
+	std::tm* good_t = std::localtime(&time);
+	
+	std::strftime(buffer, sizeof(buffer), "%G%m%e", good_t);
+	std::cout << "[" << buffer;
+	std::strftime(buffer, sizeof(buffer), "%H%M%S", good_t);
+	std::cout << "_" << buffer << "]";
 }
 
 

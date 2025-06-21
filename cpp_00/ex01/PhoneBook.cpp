@@ -71,6 +71,8 @@ void	PhoneBook::check_index(void)const
 	{
 		std::cout << "\nPlease select contact's index: ";
 		std::getline(std::cin, answer);
+		if (std::cin.eof())
+			return ; 
 		std::stringstream	i_answer(answer);
 		if (!(i_answer >> index))
 			std::cout << "Index should be a number\n";
@@ -99,7 +101,7 @@ void	PhoneBook::display_all_contact(void)const
 		if (i == 0)
 		{
 			std::cout << "\n";
-			column("0123456789", 0);
+			column("index", 0);
 			column("first name", 0);
 			column("last name", 0);
 			column("nickname", 1);

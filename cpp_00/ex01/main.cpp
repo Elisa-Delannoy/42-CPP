@@ -6,7 +6,7 @@
 /*   By: edelanno <edelanno@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 11:14:56 by edelanno          #+#    #+#             */
-/*   Updated: 2025/06/20 15:18:10 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/06/21 18:29:49 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,12 @@ std::string	get_info(const bool& phone)
 	int			number;
 
 	std::getline(std::cin, answer);
+	if (std::cin.eof())
+		return ("-1"); /*voir pour erreur*/
 	while (answer.empty() || phone)
 	{
 		if (answer.empty())
-			std::cout << "Please enter information, can not be empty: ";
+			std::cout << "Can not be empty, please enter information: ";
 		else if (phone)
 		{
 			std::stringstream	i_answer(answer);
@@ -34,6 +36,8 @@ std::string	get_info(const bool& phone)
 				break;
 		}
 		std::getline(std::cin, answer);
+		if (std::cin.eof())
+		return ("-1"); /*voir pour erreur*/
 	}
 	return (answer);	
 }
@@ -83,15 +87,19 @@ int	main()
 	while (1)
 	{
 		std::cout << "MANAGE PHONEBOOK\n"
-				 "If you want to add a contact, write: \"ADD\"\n"
-				 "If you want to display a contact, write: \"SEARCH\"\n"
-				 "If you want to quit and delete your contacts, write: \"EXIT\"\n"
-				 "\nPlease write your choice: ";
+			"If you want to add a contact, write: \"ADD\"\n"
+			"If you want to display a contact, write: \"SEARCH\"\n"
+			"If you want to quit and delete your contacts, write: \"EXIT\"\n"
+			"\nPlease write your choice: ";
 		std::getline(std::cin, user_entry);
+		if (std::cin.eof())
+			return (1);
 		while (user_entry.empty() || select_cmd(user_entry, phonebook) == 0)
 		{
 			std::cout << "Please write ADD, SEARCH or EXIT: ";
 			std::getline(std::cin, user_entry);
+			if (std::cin.eof())
+				return (1);
 		}	
 	}
 	return (0);
