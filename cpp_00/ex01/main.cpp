@@ -6,7 +6,7 @@
 /*   By: edelanno <edelanno@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 11:14:56 by edelanno          #+#    #+#             */
-/*   Updated: 2025/06/21 18:29:49 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/06/23 11:16:00 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,6 @@ std::string	get_info(const bool& phone)
 	int			number;
 
 	std::getline(std::cin, answer);
-	if (std::cin.eof())
-		return ("-1"); /*voir pour erreur*/
 	while (answer.empty() || phone)
 	{
 		if (answer.empty())
@@ -36,8 +34,6 @@ std::string	get_info(const bool& phone)
 				break;
 		}
 		std::getline(std::cin, answer);
-		if (std::cin.eof())
-		return ("-1"); /*voir pour erreur*/
 	}
 	return (answer);	
 }
@@ -73,7 +69,7 @@ int	select_cmd(std::string cmd, PhoneBook& phonebook)
 	else if (cmd.compare("SEARCH") == 0)  
 		phonebook.display_all_contact();
 	else if (cmd.compare("EXIT") == 0)  
-		exit(1);
+		exit(0);
 	else
 		return (0);
 	return (1);
@@ -92,14 +88,10 @@ int	main()
 			"If you want to quit and delete your contacts, write: \"EXIT\"\n"
 			"\nPlease write your choice: ";
 		std::getline(std::cin, user_entry);
-		if (std::cin.eof())
-			return (1);
 		while (user_entry.empty() || select_cmd(user_entry, phonebook) == 0)
 		{
 			std::cout << "Please write ADD, SEARCH or EXIT: ";
 			std::getline(std::cin, user_entry);
-			if (std::cin.eof())
-				return (1);
 		}	
 	}
 	return (0);

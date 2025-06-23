@@ -15,8 +15,8 @@
 
 PhoneBook::PhoneBook()
 {
-	this->i = 0;
-	this->count = 0;
+	this->_i = 0;
+	this->_count = 0;
 }
 
 PhoneBook::~PhoneBook()
@@ -25,12 +25,12 @@ PhoneBook::~PhoneBook()
 
 void	PhoneBook::add_contact(const Contact& contact)
 {
-	if (this->i > 7)
-		this->i = 0;
-	this->list[this->i] = contact;
-	this->i++;
-	if (this->count < 8)
-		this->count++;
+	if (this->_i > 7)
+		this->_i = 0;
+	this->_list[this->_i] = contact;
+	this->_i++;
+	if (this->_count < 8)
+		this->_count++;
 }
 
 void	PhoneBook::column(std::string element, const int& j)const
@@ -54,11 +54,11 @@ void	PhoneBook::column(std::string element, const int& j)const
 
 void	PhoneBook::display_one_contact(const int& index)const
 {
-	std::cout << "First name: " << this->list[index].get_first_name() << "\n";
-	std::cout << "Last name: " << this->list[index].get_last_name() << "\n";
-	std::cout << "Nicnkname: " << this->list[index].get_nickname() << "\n";
-	std::cout << "Phone number: " << this->list[index].get_phone_number() << "\n";
-	std::cout << "Darkest secret: " << this->list[index].get_darkest_secret() << "\n";
+	std::cout << "First name: " << this->_list[index].get_first_name() << "\n";
+	std::cout << "Last name: " << this->_list[index].get_last_name() << "\n";
+	std::cout << "Nickname: " << this->_list[index].get_nickname() << "\n";
+	std::cout << "Phone number: " << this->_list[index].get_phone_number() << "\n";
+	std::cout << "Darkest secret: " << this->_list[index].get_darkest_secret() << "\n";
 	std::cout << std::endl;
 }
 
@@ -71,22 +71,20 @@ void	PhoneBook::check_index(void)const
 	{
 		std::cout << "\nPlease select contact's index: ";
 		std::getline(std::cin, answer);
-		if (std::cin.eof())
-			return ; 
 		std::stringstream	i_answer(answer);
 		if (!(i_answer >> index))
 			std::cout << "Index should be a number\n";
-		else if (index > 0 && index <= this->count)
+		else if (index > 0 && index <= this->_count)
 		{
 			display_one_contact(index - 1);
 			break;
 		}
 		else
 		{
-			if (this->count == 1)
+			if (this->_count == 1)
 				std::cout << "Index should be 1\n";
 			else
-				std::cout << "Index should be between 1 and " << this->count<< "\n";
+				std::cout << "Index should be between 1 and " << this->_count<< "\n";
 		}		
 	}
 }
@@ -96,7 +94,7 @@ void	PhoneBook::display_all_contact(void)const
 	int	i;
 
 	i = 0;
-	while (i < 8 && !this->list[i].get_first_name().empty())
+	while (i < 8 && !this->_list[i].get_first_name().empty())
 	{
 		if (i == 0)
 		{
@@ -107,9 +105,9 @@ void	PhoneBook::display_all_contact(void)const
 			column("nickname", 1);
 		}
 		std::cout << "         " << i + 1 << "|";
-		column(this->list[i].get_first_name(), 0);
-		column(this->list[i].get_last_name(), 0);
-		column(this->list[i].get_nickname(), 1);
+		column(this->_list[i].get_first_name(), 0);
+		column(this->_list[i].get_last_name(), 0);
+		column(this->_list[i].get_nickname(), 1);
 		i++;
 	}
 	if (i == 0)

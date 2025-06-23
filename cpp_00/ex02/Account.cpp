@@ -6,7 +6,7 @@
 /*   By: edelanno <edelanno@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/20 15:46:03 by edelanno          #+#    #+#             */
-/*   Updated: 2025/06/21 18:51:57 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/06/23 11:07:15 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,7 @@ bool	Account::makeWithdrawal(int withdrawal)
 	if (this->_amount < withdrawal)
 	{
 		std::cout << "refused" << std::endl;
-		return (this->_nbWithdrawals); /*0*/
+		return (false);
 	}
 	else
 	{
@@ -102,7 +102,7 @@ bool	Account::makeWithdrawal(int withdrawal)
 		this->_totalNbWithdrawals++;
 		_totalAmount -= withdrawal;
 		std::cout << withdrawal << ";amount:" << this->_amount <<";nb_withdrawals:" << this->_nbWithdrawals << std::endl;
-		return (this->_nbWithdrawals); /*1*/
+		return (true);
 	}
 }
 
