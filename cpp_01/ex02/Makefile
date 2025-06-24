@@ -6,7 +6,7 @@
 #    By: edelanno <edelanno@student.42perpignan.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/24 14:17:25 by edelanno          #+#    #+#              #
-#    Updated: 2025/06/24 14:27:59 by edelanno         ###   ########.fr        #
+#    Updated: 2025/06/24 14:38:52 by edelanno         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,7 @@ SRC = ./main.cpp
 OBJ = $(SRC:.CPP=.o)
 
 all: $(NAME)
+	@echo "\033[32mCompilation successful !\033[0m"
 
 $(NAME): $(OBJ)
 	$(CPP) $(FLAGS) $(OBJ) -o $@
