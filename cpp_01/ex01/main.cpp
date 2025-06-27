@@ -6,14 +6,12 @@
 /*   By: edelanno <edelanno@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/23 13:03:22 by edelanno          #+#    #+#             */
-/*   Updated: 2025/06/23 18:41:56 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/06/27 10:19:45 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie* newZombie(std::string name);
-void randomChump(std::string name);
 Zombie* zombieHorde(int N, std::string name);
 
 int	main()

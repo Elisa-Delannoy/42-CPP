@@ -6,7 +6,7 @@
 /*   By: edelanno <edelanno@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/23 13:03:22 by edelanno          #+#    #+#             */
-/*   Updated: 2025/06/23 14:40:59 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/06/23 14:45:33 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void randomChump(std::string name);
 int	main()
 {
 	Zombie *zombie;
-	
+
 	zombie = newZombie("Foo");
 	zombie->announce();
 	randomChump("EL");

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edelanno <edelanno@student.42perpignan.    +#+  +:+       +#+        */
+/*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 15:09:46 by edelanno          #+#    #+#             */
-/*   Updated: 2025/06/26 17:39:16 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/06/27 12:17:22 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,13 @@ int	main(int argc, char **argv)
 	if (argc != 4)
 		return (std::cout << "Error: please enter filename, s1 and s2" << std::endl, 1);
 	
-	std::ifstream	filename(argv[1], std::ios::in );
-	std::ofstream	new_file("new_file.replace", std::ios::out | std::ios::trunc);
-	if (!filename || !new_file)
+	std::ifstream		filename(argv[1], std::ios::in);
+	if (!filename)
 		return (std::cout << "Error: file can not be opended" << std::endl, 1);
-	
+	const std::string	f_replace = std::string(argv[1]) + ".replace";
+	std::ofstream	new_file(f_replace.c_str(), std::ios::out | std::ios::trunc);
+	if (!new_file)
+		return (std::cout << "Error: file can not be opended" << std::endl, 1);
 	std::string	line;
 	std::string	s1 = argv[2];
 	std::string	s2 = argv[3];

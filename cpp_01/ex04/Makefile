@@ -3,14 +3,14 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: edelanno <edelanno@student.42perpignan.    +#+  +:+       +#+         #
+#    By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/26 13:08:44 by edelanno          #+#    #+#              #
-#    Updated: 2025/06/26 15:48:02 by edelanno         ###   ########.fr        #
+#    Updated: 2025/06/27 12:16:28 by edelanno         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = sed 
+NAME = replace 
 
 CFLAGS = c++ -Wall -Wextra -Werror -std=c++98
 
