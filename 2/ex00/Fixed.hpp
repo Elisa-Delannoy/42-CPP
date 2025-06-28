@@ -6,7 +6,7 @@
 /*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/27 15:05:06 by edelanno          #+#    #+#             */
-/*   Updated: 2025/06/27 16:29:16 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/06/28 14:46:05 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,11 @@ class Fixed
 	public:
 		Fixed();
 		Fixed(const Fixed& fixed);
+		Fixed&	operator=(const Fixed& fixed);
 		~Fixed();
+		
 		int		getRawBits(void) const;
 		void	setRawBits(int const raw);
-		Fixed&	operator=(const Fixed& fixed);
 };
 
 #endif
