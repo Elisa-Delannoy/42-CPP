@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Point.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
+/*   By: edelanno <edelanno <edelanno@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/29 16:04:20 by edelanno          #+#    #+#             */
-/*   Updated: 2025/06/29 17:30:02 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/06/29 23:40:02 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,12 @@ Point::~Point()
 {
 }
 
+Point&	operator=(const Point& point)
+{
+	(void) point;
+	return (*this);
+}
+
 const Fixed Point::get_x() const
 {
 	return (this->_x);
@@ -37,5 +43,3 @@ const Fixed Point::get_y() const
 {
 	return (this->_y);
 }
-
-

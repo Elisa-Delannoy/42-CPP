@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   bsp.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
+/*   By: edelanno <edelanno <edelanno@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/29 16:46:50 by edelanno          #+#    #+#             */
-/*   Updated: 2025/06/29 18:42:07 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/06/29 23:42:14 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,7 @@ bool bsp(Point const a, Point const b, Point const c, Point const point)
 	Fixed	area2 = area(a, c, point);
 	Fixed	area3 = area(b, c, point);
 	
-	if (area1 == Fixed(0) || area2 == Fixed(0) || area3 == Fixed(0))
-		return(false);
-	else if (area1 != Fixed(0) && area2 != Fixed(0) && area3 != Fixed(0)
+	if (area1 != Fixed(0) && area2 != Fixed(0) && area3 != Fixed(0)
 		&& area1 + area2 + area3 == t_area)
 		return (true);
 	else

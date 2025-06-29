@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
+/*   By: edelanno <edelanno <edelanno@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/27 15:05:10 by edelanno          #+#    #+#             */
-/*   Updated: 2025/06/29 18:43:53 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/06/29 23:20:54 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int main(void)
 	Point	a(0, 0);
 	Point	b(10, 0);
 	Point	c(5, 10);
-	Point	point(10, 9);
+	Point	point(5, 9);
 
 	if (bsp(a, b, c, point))
 		std::cout << "(" << point.get_x() << ", " << point.get_y()

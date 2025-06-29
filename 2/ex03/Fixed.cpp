@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
+/*   By: edelanno <edelanno <edelanno@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/27 15:05:08 by edelanno          #+#    #+#             */
-/*   Updated: 2025/06/29 18:39:16 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/06/29 23:35:46 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,9 +85,7 @@ Fixed Fixed::operator+(const Fixed& a) const
 
 Fixed	Fixed::operator-(const Fixed& a) const
 {
-	Fixed res;
-	res.setRawBits(this->_fixed - a.getRawBits());
-	return res;
+	return (Fixed(this->_fixed - a.getRawBits()));
 }
 
 Fixed	Fixed::operator*(const Fixed& a) const
@@ -101,11 +99,10 @@ Fixed	Fixed::operator*(const Fixed& a) const
 Fixed	Fixed::operator/(const Fixed& a) const
 {
 	Fixed res;
-	int	nb = 0;
+	int	div = 0;
 	if (a.getRawBits() != 0)
-		nb = (this->_fixed << _bits) / a.getRawBits();
-	res.setRawBits(nb);
-
+		div = (this->_fixed << _bits) / a.getRawBits();
+	res.setRawBits(div);
 	return(res);
 }
 
@@ -135,6 +132,7 @@ Fixed	Fixed::operator--(int)
 	return (temp);
 }
 
+
 int		Fixed::getRawBits(void) const
 {
 	return (this->_fixed);
@@ -146,7 +144,7 @@ void	Fixed::setRawBits(int const raw)
 
 float	Fixed::toFloat(void) const
 {
-	return static_cast<float>(this->_fixed) / (1 << _bits);
+	return ((float)(this->_fixed) / (1 << _bits));
 }
 int		Fixed::toInt(void) const
 {
