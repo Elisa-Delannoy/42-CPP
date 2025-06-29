@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
+/*   By: edelanno <edelanno <edelanno@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/27 15:05:06 by edelanno          #+#    #+#             */
-/*   Updated: 2025/06/28 17:11:05 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/06/29 13:25:00 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ class Fixed
 {		
 	private:
 		int					_fixed;
-		static const int	_bits = 8;
+		static const int	_bits;
 
 	public:
 		Fixed();

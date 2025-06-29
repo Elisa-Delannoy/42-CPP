@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
+/*   By: edelanno <edelanno <edelanno@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/27 15:05:08 by edelanno          #+#    #+#             */
-/*   Updated: 2025/06/28 19:12:56 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/06/29 14:06:25 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,11 @@
 
 Fixed::Fixed() : _fixed(0)
 {
-	// std::cout << "Default constructor called" << std::endl;
 }
 
 Fixed::Fixed(const Fixed& fixed)
 {
-	// std::cout << "Copy constructor called" << std::endl;
-	*this = fixed;
+	this->_fixed = fixed.getRawBits();
 }
 
 Fixed::Fixed(const int nb)
@@ -98,8 +96,7 @@ Fixed	Fixed::operator-(const Fixed& a) const
 Fixed	Fixed::operator*(const Fixed& a) const
 {
 	Fixed res;
-	int nb = this->_fixed * a.getRawBits() >> _bits;
-	res.setRawBits(nb);
+	res.setRawBits(this->_fixed * a.getRawBits() / (1 << _bits));
 	return(res);
 }
 
@@ -108,7 +105,7 @@ Fixed	Fixed::operator/(const Fixed& a) const
 	Fixed res;
 	int	nb = 0;
 	if (a.getRawBits() != 0)
-		nb = (this->_fixed << _bits) / a.getRawBits();
+		nb = (this->_fixed * (1 << _bits)) / a.getRawBits();
 	res.setRawBits(nb);
 	return(res);
 }
@@ -119,22 +116,25 @@ Fixed&	Fixed::operator++()
 	return (*this);
 }
 
-Fixed&	Fixed::operator++(int)
+Fixed	Fixed::operator++(int)
 {
-	Fixed temp(*this);
+	Fixed temp = *this;
 	this->_fixed += 1;
 	return (temp);
 }
 
-// Fixed&	Fixed::operator--()
-// {
-	
-// }
+Fixed&	Fixed::operator--()
+{
+	this->_fixed -= 1;
+	return (*this);
+}
 
-// Fixed&	Fixed::operator--(int)
-// {
-	
-// }
+Fixed	Fixed::operator--(int)
+{
+	Fixed temp = *this;
+	this->_fixed -= 1;
+	return (temp);
+}
 
 
 int		Fixed::getRawBits(void) const
@@ -155,14 +155,37 @@ int		Fixed::toInt(void) const
 	return (this->_fixed >> _bits);
 }
 
-// static Fixed& 	Fixed::min(Fixed& a, Fixed& b)
-// {
-	
-// }
-// static Fixed& 	Fixed::min(const Fixed& a, const Fixed& b);
-// static Fixed& 	Fixed::max(Fixed& a, Fixed& b);
-// static Fixed& 	Fixed::max(const Fixed& a, const Fixed& b);
+Fixed& 	Fixed::min(Fixed& a, Fixed& b)
+{
+	if (a < b)
+		return (a);
+	else
+		return (b);
+}
 
+const Fixed& 	Fixed::min(const Fixed& a, const Fixed& b)
+{
+	if (a < b)
+		return (a);
+	else
+		return (b);
+}
+
+Fixed& 	Fixed::max(Fixed& a, Fixed& b)
+{
+	if (a > b)
+		return (a);
+	else
+		return (b);
+}
+
+const Fixed& 	Fixed::max(const Fixed& a, const Fixed& b)
+{
+	if (a > b)
+		return (a);
+	else
+		return (b);
+}
 
 std::ostream& operator<<(std::ostream& out, const Fixed& nb)
 {

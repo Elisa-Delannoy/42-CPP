@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
+/*   By: edelanno <edelanno <edelanno@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/27 15:05:06 by edelanno          #+#    #+#             */
-/*   Updated: 2025/06/28 19:10:24 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/06/29 14:05:19 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,9 @@ class Fixed
 		Fixed	operator*(const Fixed& a) const;
 		Fixed	operator/(const Fixed& a) const;
 		Fixed&	operator++();
-		Fixed&	operator++(int);
+		Fixed	operator++(int);
 		Fixed&	operator--();
-		Fixed&	operator--(int);
+		Fixed	operator--(int);
 
 
 
@@ -54,9 +54,9 @@ class Fixed
 		float	toFloat(void) const;
 		int		toInt(void) const;
 		static Fixed& 	min(Fixed& a, Fixed& b);
-		static Fixed& 	min(const Fixed& a, const Fixed& b);
+		static const Fixed& 	min(const Fixed& a, const Fixed& b);
 		static Fixed& 	max(Fixed& a, Fixed& b);
-		static Fixed& 	max(const Fixed& a, const Fixed& b);
+		static const Fixed& 	max(const Fixed& a, const Fixed& b);
 	};
 	
 std::ostream& operator<<(std::ostream& out, const Fixed& nb);
