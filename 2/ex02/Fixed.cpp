@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edelanno <edelanno <edelanno@student.42    +#+  +:+       +#+        */
+/*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/27 15:05:08 by edelanno          #+#    #+#             */
-/*   Updated: 2025/06/29 14:06:25 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/06/29 18:39:49 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,28 +25,22 @@ Fixed::Fixed(const Fixed& fixed)
 
 Fixed::Fixed(const int nb)
 {
-	// std::cout << "Int constructor called" << std::endl;
 	this->_fixed = nb << _bits;
 }
 Fixed::Fixed(const float nb)
 {
-	// std::cout << "Float constructor called" << std::endl;
 	this->_fixed = static_cast<int>(roundf(nb * (1 << _bits)));
 }
 
 
-
 Fixed::~Fixed()
 {
-	// std::cout << "Destructor called" << std::endl;
 }
 
 
 
 Fixed&	Fixed::operator=(const Fixed& fixed)
 {
-	// std::cout << "Copy assignment operator called" << std::endl;
-
 	this->_fixed = fixed.getRawBits();
 	return (*this);
 }
@@ -81,22 +75,25 @@ bool 	Fixed::operator!=(const Fixed& a) const
 	return (this->_fixed != a.getRawBits());
 }
 	
-
-
-Fixed	Fixed::operator+(const Fixed& a) const
+Fixed Fixed::operator+(const Fixed& a) const
 {
-	return(Fixed(this->_fixed + a.getRawBits()));
+	Fixed res;
+	res.setRawBits(this->_fixed + a.getRawBits());
+	return res;
 }
 
 Fixed	Fixed::operator-(const Fixed& a) const
 {
-	return(Fixed(this->_fixed - a.getRawBits()));
+	Fixed res;
+	res.setRawBits(this->_fixed - a.getRawBits());
+	return res;
 }
 
 Fixed	Fixed::operator*(const Fixed& a) const
 {
 	Fixed res;
-	res.setRawBits(this->_fixed * a.getRawBits() / (1 << _bits));
+	int product = this->_fixed * a.getRawBits();
+	res._fixed = product >> _bits;
 	return(res);
 }
 
@@ -105,8 +102,9 @@ Fixed	Fixed::operator/(const Fixed& a) const
 	Fixed res;
 	int	nb = 0;
 	if (a.getRawBits() != 0)
-		nb = (this->_fixed * (1 << _bits)) / a.getRawBits();
+		nb = (this->_fixed << _bits) / a.getRawBits();
 	res.setRawBits(nb);
+
 	return(res);
 }
 

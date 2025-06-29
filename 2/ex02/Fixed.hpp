@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edelanno <edelanno <edelanno@student.42    +#+  +:+       +#+        */
+/*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/27 15:05:06 by edelanno          #+#    #+#             */
-/*   Updated: 2025/06/29 14:05:19 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/06/29 16:02:50 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,10 +43,6 @@ class Fixed
 		Fixed&	operator--();
 		Fixed	operator--(int);
 
-
-
-
-		
 		~Fixed();
 		
 		int		getRawBits(void) const;
