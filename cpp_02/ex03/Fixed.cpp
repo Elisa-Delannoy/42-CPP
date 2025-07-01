@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edelanno <edelanno <edelanno@student.42    +#+  +:+       +#+        */
+/*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/27 15:05:08 by edelanno          #+#    #+#             */
-/*   Updated: 2025/06/29 23:35:46 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/07/01 16:34:07 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ Fixed::Fixed(const int nb)
 }
 Fixed::Fixed(const float nb)
 {
-	this->_fixed = static_cast<int>(roundf(nb * (1 << _bits)));
+	this->_fixed = (roundf(nb * (1 << _bits)));
 }
 
 

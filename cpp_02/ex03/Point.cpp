@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Point.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edelanno <edelanno <edelanno@student.42    +#+  +:+       +#+        */
+/*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/29 16:04:20 by edelanno          #+#    #+#             */
-/*   Updated: 2025/06/29 23:40:02 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/06/30 11:03:38 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ Point::~Point()
 {
 }
 
-Point&	operator=(const Point& point)
+Point&	Point::operator=(const Point& point)
 {
 	(void) point;
 	return (*this);
