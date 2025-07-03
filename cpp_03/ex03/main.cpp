@@ -6,7 +6,7 @@
 /*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 14:27:30 by edelanno          #+#    #+#             */
-/*   Updated: 2025/07/03 14:26:44 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/07/03 16:53:35 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ int	main()
 {
 	DiamondTrap	test1("DIAM");
 	DiamondTrap	test2("te");
-
 
 	test1.attack("enemy 1");
 	check_hit(test1);
@@ -49,5 +48,4 @@ int	main()
 	test2.attack("frag enemy 6");
 	test2.whoAmI();
 	test1.whoAmI();
-	
 }

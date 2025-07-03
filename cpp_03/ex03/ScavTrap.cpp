@@ -6,7 +6,7 @@
 /*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 14:37:48 by edelanno          #+#    #+#             */
-/*   Updated: 2025/07/03 14:22:44 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/07/03 17:17:50 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,9 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 	this->_hit_point = 100;
 	this->_energy_point = 50;
 	this->_attack_damage = 20;
+	std::cout << "scap " << _hit_point << "\n";
+	std::cout << "scap " << _energy_point << "\n";
+	std::cout << "scap " << _attack_damage << "\n";
 	std::cout << "ScavTrap name constructor called" << std::endl;
 }
 

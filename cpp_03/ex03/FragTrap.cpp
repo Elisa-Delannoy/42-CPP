@@ -6,7 +6,7 @@
 /*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 17:37:34 by edelanno          #+#    #+#             */
-/*   Updated: 2025/07/03 14:22:47 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/07/03 17:17:34 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,9 @@ FragTrap::FragTrap(std::string name) : ClapTrap(name)
 	this->_hit_point = 100;
 	this->_energy_point = 100;
 	this->_attack_damage = 30;
+	std::cout << "frag " << _hit_point << "\n";
+	std::cout << "frag " << _energy_point << "\n";
+	std::cout << "frag " << _attack_damage << "\n";
 	std::cout << "FragTrap name constructor called for " << this->_name  << std::endl;
 }
 

@@ -6,7 +6,7 @@
 /*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 11:26:12 by edelanno          #+#    #+#             */
-/*   Updated: 2025/07/03 12:29:06 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/07/03 17:18:06 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,9 @@ ClapTrap::ClapTrap() : _name("default"), _hit_point(10), _energy_point(10), _att
 
 ClapTrap::ClapTrap(std::string name) : _name(name), _hit_point(10), _energy_point(10), _attack_damage(0)
 {
+	std::cout << "clap " << _hit_point << "\n";
+	std::cout << "clap " << _energy_point << "\n";
+	std::cout << "clap " << _attack_damage << "\n";
 	std::cout << "Name constructor called" << std::endl;
 }
 
