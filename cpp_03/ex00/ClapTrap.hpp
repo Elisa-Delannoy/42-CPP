@@ -6,7 +6,7 @@
 /*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 11:26:15 by edelanno          #+#    #+#             */
-/*   Updated: 2025/07/01 15:20:10 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/07/03 11:12:42 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ class ClapTrap
 		ClapTrap&	operator=(const ClapTrap& new_clap);
 		void		attack(const std::string& target);
 		void		takeDamage(unsigned int amount);
-		void		beRepaired(unsigned int amout);
+		void		beRepaired(unsigned int amount);
 
 		void		setHitPoint(const int hit_point);
 		int			getHitPoint(void) const;

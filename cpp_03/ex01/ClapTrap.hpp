@@ -6,7 +6,7 @@
 /*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 11:26:15 by edelanno          #+#    #+#             */
-/*   Updated: 2025/07/02 17:14:08 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/07/03 11:12:48 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 class ClapTrap
 {
-	private:
+	protected:
 		std::string	_name;
 		int			_hit_point;
 		int			_energy_point;
@@ -32,7 +32,7 @@ class ClapTrap
 		ClapTrap&		operator=(const ClapTrap& new_clap);
 		virtual void	attack(const std::string& target);
 		void			takeDamage(unsigned int amount);
-		void			beRepaired(unsigned int amout);
+		void			beRepaired(unsigned int amount);
 	
 		void			setHitPoint(const int hit_point);
 		int				getHitPoint(void) const;

@@ -1,23 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/01 14:27:30 by edelanno          #+#    #+#             */
-/*   Updated: 2025/07/01 14:50:09 by edelanno         ###   ########.fr       */
+/*   Created: 2025/07/02 17:37:37 by edelanno          #+#    #+#             */
+/*   Updated: 2025/07/03 11:13:07 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-int	main()
+class FragTrap : public ClapTrap
 {
-	ClapTrap	test("user");
+	private:
 
-	test.attack("enemy");
-	test.beRepaired(5);
-	test.takeDamage(4);
-	return (0);
-}
+	public:
+	FragTrap();
+	FragTrap(std::string name);
+	FragTrap(const FragTrap& copy);
+	~FragTrap();
+	FragTrap& operator=(const FragTrap& new_fragtrap);
+
+	void	highFivesGuys(void);
+};
