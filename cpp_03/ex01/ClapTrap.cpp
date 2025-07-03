@@ -6,7 +6,7 @@
 /*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 11:26:12 by edelanno          #+#    #+#             */
-/*   Updated: 2025/07/03 11:28:04 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/07/03 11:51:35 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,7 +122,11 @@ void	ClapTrap::beRepaired(unsigned int amount)
 		this->_hit_point += amount;
 		this->_energy_point--;
 		std::cout << "ClapTrap " << this->_name << " repaired itself with " 
-		<< amount << " energy points !" << std::endl;
+		<< amount;
+		if (amount <= 1)
+			std::cout << " hit point !" << std::endl;
+		else
+			std::cout << " hit points !" << std::endl;
 	}
 	else if (this->_hit_point == 0)
 		std::cout << "ClapTrap " << this->_name <<  " is dead" << std::endl;

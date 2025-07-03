@@ -6,7 +6,7 @@
 /*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 14:27:30 by edelanno          #+#    #+#             */
-/*   Updated: 2025/07/01 17:17:02 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/07/03 13:24:53 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,9 @@
 
 void	check_hit(ClapTrap test)
 {
-	std::cout << "ClapTrap " << test.getName() << " : nb hit point " << test.getHitPoint()
-		 << ", nb energy point " << test.getEnergyPoint() << std::endl;
+	std::cout << "\n" << test.getName() << " : nb hit point " << test.getHitPoint()
+		<< ", nb energy point " << test.getEnergyPoint()
+		<< ", nb attack damage "<< test.getAttackDamage()<< "\n" << std::endl;
 }
 
 int	main()
@@ -29,13 +30,14 @@ int	main()
 	test1.takeDamage(2);
 	test1.takeDamage(5);
 	test1.beRepaired(3);
-	test1.attack("enemy 2");
-	test1.attack("enemy 2");
-	test1.attack("enemy 2");
-	test1.attack("enemy 2");
-	test1.attack("enemy 2");
-	test1.attack("enemy 2");
-	test1.attack("enemy 2");
+	test1.attack("enemy 3");
+	test1.attack("enemy 4");
+	test1.attack("enemy 5");
+	test1.attack("enemy 6");
+	test1.attack("enemy 7");
+	test1.attack("enemy 8");
+	test1.attack("enemy 9");
+
 }
 
 // int	main()

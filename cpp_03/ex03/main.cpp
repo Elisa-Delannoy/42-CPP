@@ -6,12 +6,13 @@
 /*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 14:27:30 by edelanno          #+#    #+#             */
-/*   Updated: 2025/07/03 13:20:37 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/07/03 14:26:44 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "DiamondTrap.hpp"
 #include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 void	check_hit(ClapTrap test)
 {
@@ -22,31 +23,31 @@ void	check_hit(ClapTrap test)
 
 int	main()
 {
-	ClapTrap	test1("test alive");
-	ScavTrap	test2("ScavTrap");
-	ScavTrap	test3("ScavTrap");
+	DiamondTrap	test1("DIAM");
+	DiamondTrap	test2("te");
+
 
 	test1.attack("enemy 1");
+	check_hit(test1);
 	test1.beRepaired(1);
 	test1.attack("enemy 2");
+	test1.takeDamage(2);
+	test1.takeDamage(5);
+	test1.beRepaired(3);
+	test1.attack("enemy 2");
 	check_hit(test1);
-
+	test1.attack("enemy 3");
+	check_hit(test1);
 	test2.attack("frag enemy 1");
-	check_hit(test2);
 	test2.attack("frag enemy 2");
-	test3.attack("bob");
 	test2.attack("frag enemy 3");
 	test2.takeDamage(2);
 	test2.takeDamage(5);
-	test3.takeDamage(95);;
-	test2.beRepaired(3);
-	test3.beRepaired(2);
-	test3.takeDamage(13);
-	test3.attack("bob");
-	test3.beRepaired(13);
-	check_hit(test3);
+	check_hit(test2);
 	test2.attack("frag enemy 4");
 	test2.attack("frag enemy 5");
 	test2.attack("frag enemy 6");
-	test2.guardGate();
+	test2.whoAmI();
+	test1.whoAmI();
+	
 }

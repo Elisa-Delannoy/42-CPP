@@ -6,7 +6,7 @@
 #    By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/01 14:27:56 by edelanno          #+#    #+#              #
-#    Updated: 2025/07/03 11:59:04 by edelanno         ###   ########.fr        #
+#    Updated: 2025/07/03 14:23:58 by edelanno         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = clap
 
 CFLAGS = c++ -Wall -Wextra -Werror -std=c++98
 
-SRC = ./main.cpp ./ClapTrap.cpp ./ScavTrap.cpp ./FragTrap.cpp
+SRC = ./main.cpp ./ClapTrap.cpp ./ScavTrap.cpp ./FragTrap.cpp ./DiamondTrap.cpp
 OBJ = $(SRC:.cpp=.o)
 	
 all: $(NAME)
