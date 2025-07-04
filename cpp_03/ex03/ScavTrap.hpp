@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
+/*   By: edelanno <edelanno <edelanno@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 14:38:07 by edelanno          #+#    #+#             */
-/*   Updated: 2025/07/03 14:19:31 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/07/04 17:29:42 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,15 @@
 
 class ScavTrap : virtual public ClapTrap
 {
-	
-	private:
-
+	protected:
+		int	_realE;
 	public:
 		ScavTrap();
 		ScavTrap(std::string name);
 		ScavTrap(const ScavTrap& copy);
 		ScavTrap& operator=(const ScavTrap& new_ScavTrap);
 		~ScavTrap();
-
+		
 		void	guardGate();
 		void	attack(const std::string& target);
 };

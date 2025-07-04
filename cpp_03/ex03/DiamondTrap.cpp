@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   DiamondTrap.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
+/*   By: edelanno <edelanno <edelanno@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 12:00:52 by edelanno          #+#    #+#             */
-/*   Updated: 2025/07/03 17:30:50 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/07/04 17:52:36 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,27 +16,27 @@
 
 DiamondTrap::DiamondTrap() : ScavTrap(), FragTrap()
 {
-	this->_hit_point = FragTrap::_hit_point;
-	this->_energy_point = ScavTrap::_energy_point;
-	this->_attack_damage = FragTrap::_attack_damage;
+	this->_energy_point = ScavTrap::_realE;
+	this->_attack_damage = FragTrap::_realA;
 	std::cout << "DiamondTrap constructor called" << std::endl;
 }
 
 DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name"), ScavTrap(name), FragTrap(name)
 {
 	this->_name = name;
-	this->_hit_point = FragTrap::_hit_point;
-	this->_energy_point = ScavTrap::_energy_point;
-	this->_attack_damage = FragTrap::_attack_damage;
-	std::cout << "diam " << _hit_point << "\n";
-	std::cout << "diam " << _energy_point << "\n";
-	std::cout << "diam " << _attack_damage << "\n";
+	this->_hit_point = FragTrap::_realH;
+	this->_energy_point = ScavTrap::_realE;
+	this->_attack_damage = FragTrap::_realA;
 	std::cout << "DiamondTrap name constructor called" << std::endl;
 }
 
 DiamondTrap::DiamondTrap(const DiamondTrap& copy) : ScavTrap(copy), FragTrap(copy)
 {
 	std::cout << "DiamondTrap copy constructor called" << std::endl;
+	this->_name = copy.getName();
+	this->_hit_point = copy._hit_point;
+	this->_energy_point = copy._energy_point;
+	this->_attack_damage = copy._attack_damage;
 }
 
 DiamondTrap::~DiamondTrap()
@@ -51,6 +51,9 @@ DiamondTrap& DiamondTrap::operator=(const DiamondTrap& new_diamondtrap)
 	{
 		this->_name = new_diamondtrap.getName();
 		ClapTrap::operator=(new_diamondtrap);
+	this->_hit_point = new_diamondtrap._hit_point;
+	this->_energy_point = new_diamondtrap._energy_point;
+	this->_attack_damage = new_diamondtrap._attack_damage;
 	}
 	return (*this);
 }

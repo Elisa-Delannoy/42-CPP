@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
+/*   By: edelanno <edelanno <edelanno@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 17:37:37 by edelanno          #+#    #+#             */
-/*   Updated: 2025/07/03 14:22:13 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/07/04 17:25:32 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@
 class FragTrap : virtual public ClapTrap
 {
 	protected:
-
+		int _realH;
+		int _realA;
 	public:
 		FragTrap();
 		FragTrap(std::string name);

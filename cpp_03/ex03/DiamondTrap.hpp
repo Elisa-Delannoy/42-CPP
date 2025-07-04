@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
+/*   By: edelanno <edelanno <edelanno@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 12:00:54 by edelanno          #+#    #+#             */
-/*   Updated: 2025/07/03 14:17:07 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/07/04 17:26:29 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,7 @@ class DiamondTrap : public ScavTrap, public FragTrap
 		DiamondTrap& operator=(const DiamondTrap& new_diamondtrap);
 
 		void	whoAmI();
-		using	ScavTrap::attack;
-	
+		using	ScavTrap::attack;	
 };
 
 #endif

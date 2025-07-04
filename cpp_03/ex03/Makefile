@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+         #
+#    By: edelanno <edelanno <edelanno@student.42    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/01 14:27:56 by edelanno          #+#    #+#              #
-#    Updated: 2025/07/03 14:23:58 by edelanno         ###   ########.fr        #
+#    Updated: 2025/07/04 15:18:40 by edelanno         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 

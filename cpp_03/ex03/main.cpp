@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
+/*   By: edelanno <edelanno <edelanno@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 14:27:30 by edelanno          #+#    #+#             */
-/*   Updated: 2025/07/03 16:53:35 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/07/04 17:19:51 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "ScavTrap.hpp"
 #include "FragTrap.hpp"
 
-void	check_hit(ClapTrap test)
+void	check_hit(const ClapTrap& test)
 {
 	std::cout << "\n" << test.getName() << " : nb hit point " << test.getHitPoint()
 		<< ", nb energy point " << test.getEnergyPoint()

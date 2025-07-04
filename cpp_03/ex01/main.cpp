@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
+/*   By: edelanno <edelanno <edelanno@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 14:27:30 by edelanno          #+#    #+#             */
-/*   Updated: 2025/07/03 13:20:37 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/07/04 17:39:41 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
 
-void	check_hit(ClapTrap test)
+void	check_hit(const ClapTrap& test)
 {
 	std::cout << "\n" << test.getName() << " : nb hit point " << test.getHitPoint()
 		<< ", nb energy point " << test.getEnergyPoint()

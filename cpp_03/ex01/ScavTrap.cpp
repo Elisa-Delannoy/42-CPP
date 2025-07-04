@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
+/*   By: edelanno <edelanno <edelanno@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 14:37:48 by edelanno          #+#    #+#             */
-/*   Updated: 2025/07/03 11:12:51 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/07/04 17:53:40 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,9 @@
 
 ScavTrap::ScavTrap() : ClapTrap()
 {
-	
+	this->_hit_point = 100;
+	this->_energy_point = 50;
+	this->_attack_damage = 20;
 	std::cout << "Default ScavTrap constructor called" << std::endl;
 }
 
@@ -29,14 +31,22 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 
 ScavTrap::ScavTrap(const ScavTrap& copy) : ClapTrap(copy)
 {
-		std::cout << "ScavTrap copy constructor called" << std::endl;
+	this->_hit_point = copy._hit_point;
+	this->_energy_point = copy._energy_point;
+	this->_attack_damage = copy._attack_damage;
+	std::cout << "ScavTrap copy constructor called" << std::endl;
 }
 
 ScavTrap& ScavTrap::operator=(const ScavTrap& new_ScavTrap)
 {
-	std::cout << "ScavTrap assignment operator called" << std::endl;
 	if (this != &new_ScavTrap)
+	{
 		ClapTrap::operator=(new_ScavTrap);
+		this->_hit_point = new_ScavTrap._hit_point;
+		this->_energy_point = new_ScavTrap._energy_point;
+		this->_attack_damage = new_ScavTrap._attack_damage;
+	}
+	std::cout << "ScavTrap assignment operator called" << std::endl;
 	return (*this);
 }
 
