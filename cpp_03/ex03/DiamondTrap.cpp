@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   DiamondTrap.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edelanno <edelanno <edelanno@student.42    +#+  +:+       +#+        */
+/*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 12:00:52 by edelanno          #+#    #+#             */
-/*   Updated: 2025/07/04 17:52:36 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/07/05 20:09:28 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,9 +51,9 @@ DiamondTrap& DiamondTrap::operator=(const DiamondTrap& new_diamondtrap)
 	{
 		this->_name = new_diamondtrap.getName();
 		ClapTrap::operator=(new_diamondtrap);
-	this->_hit_point = new_diamondtrap._hit_point;
-	this->_energy_point = new_diamondtrap._energy_point;
-	this->_attack_damage = new_diamondtrap._attack_damage;
+		this->_hit_point = new_diamondtrap._hit_point;
+		this->_energy_point = new_diamondtrap._energy_point;
+		this->_attack_damage = new_diamondtrap._attack_damage;
 	}
 	return (*this);
 }
