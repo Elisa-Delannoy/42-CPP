@@ -1,34 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/05 19:59:01 by edelanno          #+#    #+#             */
-/*   Updated: 2025/07/05 20:26:35 by edelanno         ###   ########.fr       */
+/*   Created: 2025/07/05 15:56:58 by edelanno          #+#    #+#             */
+/*   Updated: 2025/07/05 21:17:16 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRONGANIMAL_HPP
-# define WRONGANIMAL_HPP
+#include "Animal.hpp"
+#include "Dog.hpp"
+#include "Cat.hpp"
+#include "WrongAnimal.hpp"
+#include "WrongCat.hpp"
+#include "Brain.hpp"
 
-#include <string>
-#include <iostream>
-
-class WrongAnimal
+int main()
 {
-	protected:
-		std::string	_type;
+	Animal*	animal[100];
 
-	public:
-		WrongAnimal();
-		WrongAnimal (const WrongAnimal& copy);
-		~WrongAnimal();
-		WrongAnimal& operator=(const WrongAnimal& new_Wronganimal);
-		
-		void				makeSound() const;
-		const std::string 	getType() const;
-};
+	for (int i = 0; i < 100; i++)
+	{
+		if (i < 50)
+			animal[i] = new Dog();
+		else
+			animal[i] = new Cat();			
+	}
 
-#endif
+	for (int i = 0; i < 100; i++)
+	{
+		std::cout << animal[i]->getType() << std::endl;
+		delete animal[i];
+	}
+	
+	
+
+	return (0);
+}

@@ -6,7 +6,7 @@
 /*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/05 19:59:01 by edelanno          #+#    #+#             */
-/*   Updated: 2025/07/05 20:26:35 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/07/05 20:02:29 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <string>
 #include <iostream>
+
 
 class WrongAnimal
 {

@@ -1,34 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/05 19:59:01 by edelanno          #+#    #+#             */
-/*   Updated: 2025/07/05 20:26:35 by edelanno         ###   ########.fr       */
+/*   Created: 2025/07/05 20:13:11 by edelanno          #+#    #+#             */
+/*   Updated: 2025/07/05 20:20:41 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRONGANIMAL_HPP
-# define WRONGANIMAL_HPP
+#ifndef BRAIN_CPP
+# define BRAIN_CPP
 
-#include <string>
-#include <iostream>
+# include <iostream>
 
-class WrongAnimal
+class Brain
 {
 	protected:
-		std::string	_type;
+		std::string	_ideas[100];
 
 	public:
-		WrongAnimal();
-		WrongAnimal (const WrongAnimal& copy);
-		~WrongAnimal();
-		WrongAnimal& operator=(const WrongAnimal& new_Wronganimal);
-		
-		void				makeSound() const;
-		const std::string 	getType() const;
+		Brain();
+		Brain (const Brain& copy);
+		~Brain();
+		Brain& operator=(const Brain& new_brain);
+	
 };
 
 #endif

@@ -6,18 +6,21 @@
 /*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/05 18:54:24 by edelanno          #+#    #+#             */
-/*   Updated: 2025/07/05 20:26:21 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/07/05 20:34:17 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 #include "Cat.hpp"
+#include "Brain.hpp"
 
+class Animal;
 
 Cat::Cat() : Animal()
 {
 	std::cout << "Default Cat constructor called" << std::endl;
 	this->_type = "Cat";
+	this->_brain = new Brain();
 }
 
 Cat::Cat (const Cat& copy)
@@ -29,6 +32,7 @@ Cat::Cat (const Cat& copy)
 Cat::~Cat()
 {
 	std::cout << "Default Cat destructor called" << std::endl;
+	delete this->_brain;
 }
 
 Cat&	Cat::operator=(const Cat& new_cat)
