@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edelanno <edelanno <edelanno@student.42    +#+  +:+       +#+        */
+/*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 17:37:34 by edelanno          #+#    #+#             */
-/*   Updated: 2025/07/04 17:53:27 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/07/05 15:02:05 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,5 +57,5 @@ FragTrap::~FragTrap()
 
 void	FragTrap::highFivesGuys()
 {
-	std::cout << "FragTrap : \"Please high fives !\"" << std::endl;
+	std::cout << "FragTrap : \"Hey, high fives !\"" << std::endl;
 }

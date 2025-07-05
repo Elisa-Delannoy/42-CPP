@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edelanno <edelanno <edelanno@student.42    +#+  +:+       +#+        */
+/*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 14:37:48 by edelanno          #+#    #+#             */
-/*   Updated: 2025/07/04 17:53:13 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/07/05 15:03:21 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,14 @@ void	ScavTrap::guardGate()
 
 void	ScavTrap::attack(const std::string& target)
 {
-	std::cout << "ScavTrap will attack " << target << ":" << std::endl;
-	ClapTrap::attack(target);
+	if (this->_hit_point > 0 && this->_energy_point > 0)
+	{
+		this->_energy_point--;
+		std::cout << "ScavTrap " << this->_name << " attacks " << target
+			<< " causing " << this->_attack_damage << " points of damage!" << std::endl;
+	}
+	else if (this->_hit_point == 0)
+		std::cout << "ScavTrap " << this->_name <<  " is dead" << std::endl;
+	else
+		std::cout << "ScavTrap " << this->_name <<  " has no longer energy to attack" << std::endl;
 }

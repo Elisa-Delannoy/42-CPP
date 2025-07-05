@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edelanno <edelanno <edelanno@student.42    +#+  +:+       +#+        */
+/*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 14:27:30 by edelanno          #+#    #+#             */
-/*   Updated: 2025/07/04 17:39:41 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/07/05 14:59:31 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ void	check_hit(const ClapTrap& test)
 int	main()
 {
 	ClapTrap	test1("test alive");
-	ScavTrap	test2("ScavTrap");
-	ScavTrap	test3("ScavTrap");
+	ScavTrap	test2("Scav");
+	ScavTrap	test3("Scavbis");
 
 	test1.attack("enemy 1");
 	test1.beRepaired(1);
@@ -49,4 +49,5 @@ int	main()
 	test2.attack("frag enemy 5");
 	test2.attack("frag enemy 6");
 	test2.guardGate();
+	check_hit(test2);
 }

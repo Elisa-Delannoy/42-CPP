@@ -6,7 +6,7 @@
 /*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 11:26:15 by edelanno          #+#    #+#             */
-/*   Updated: 2025/07/03 11:12:42 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/07/05 15:00:33 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 class ClapTrap
 {
-	private:
+	protected:
 		std::string	_name;
 		int			_hit_point;
 		int			_energy_point;

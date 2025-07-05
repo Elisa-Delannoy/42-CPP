@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edelanno <edelanno <edelanno@student.42    +#+  +:+       +#+        */
+/*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 17:37:34 by edelanno          #+#    #+#             */
-/*   Updated: 2025/07/04 17:53:04 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/07/05 15:08:01 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ FragTrap::FragTrap(std::string name) : ClapTrap(name)
 	this->_attack_damage = 30;
 	this->_realH = this->_hit_point;
 	this->_realA = this->_attack_damage;
-	std::cout << "FragTrap name constructor called for " << this->_name  << std::endl;
+	std::cout << "FragTrap name constructor called" << std::endl;
 }
 
 FragTrap::FragTrap(const FragTrap& copy) : ClapTrap(copy)
@@ -58,7 +58,7 @@ FragTrap& FragTrap::operator=(const FragTrap& new_fragtrap)
 
 FragTrap::~FragTrap()
 {
-	std::cout << "FragTrap destructor called for " << this->_name  << std::endl;
+	std::cout << "FragTrap destructor called" << std::endl;
 }
 
 void	FragTrap::highFivesGuys()

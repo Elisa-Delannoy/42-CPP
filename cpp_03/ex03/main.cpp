@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edelanno <edelanno <edelanno@student.42    +#+  +:+       +#+        */
+/*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 14:27:30 by edelanno          #+#    #+#             */
-/*   Updated: 2025/07/04 17:19:51 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/07/05 15:10:21 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,9 @@ void	check_hit(const ClapTrap& test)
 int	main()
 {
 	DiamondTrap	test1("DIAM");
-	DiamondTrap	test2("te");
-
+	DiamondTrap	test2("test");
+	
+	test1.getName();
 	test1.attack("enemy 1");
 	check_hit(test1);
 	test1.beRepaired(1);
