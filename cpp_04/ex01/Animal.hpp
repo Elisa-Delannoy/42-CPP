@@ -6,7 +6,7 @@
 /*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/05 15:58:53 by edelanno          #+#    #+#             */
-/*   Updated: 2025/07/05 19:59:11 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/07/06 14:51:55 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <string>
 #include <iostream>
+#include "Brain.hpp"
 
 class Dog;
 class Cat;
@@ -31,6 +32,7 @@ class Animal
 		Animal& operator=(const Animal& new_animal);
 		
 		virtual void		makeSound() const;
+		virtual Brain		getBrain()const;
 		const std::string 	getType() const;
 };
 

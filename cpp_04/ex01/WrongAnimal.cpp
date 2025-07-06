@@ -6,7 +6,7 @@
 /*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/05 19:57:51 by edelanno          #+#    #+#             */
-/*   Updated: 2025/07/05 20:05:40 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/07/06 14:17:32 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ WrongAnimal& WrongAnimal::operator=(const WrongAnimal& new_Wronganimal)
 
 void	WrongAnimal::makeSound() const
 {
-	std::cout << "WrongAnimal - default sound" << std::endl;
+	std::cout << "WrongAnimal : no sound" << std::endl;
 }
 
 const std::string	WrongAnimal::getType() const

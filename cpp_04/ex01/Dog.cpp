@@ -6,7 +6,7 @@
 /*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/05 18:47:47 by edelanno          #+#    #+#             */
-/*   Updated: 2025/07/05 20:34:39 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/07/06 14:52:03 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ Dog::Dog (const Dog& copy) : Animal(copy)
 {
 	std::cout << "Copy Dog constructor called" << std::endl;
 	_type = copy._type;
+	this->_brain = new Brain(*copy._brain);
 }
 
 Dog::~Dog()
@@ -47,4 +48,9 @@ Dog&	Dog::operator=(const Dog& new_dog)
 void	Dog::makeSound() const
 {
 	std::cout << this->_type << ": \"Wouaf\"" << std::endl;
+}
+
+Brain	Dog::getBrain() const
+{
+	return (*this->_brain);
 }

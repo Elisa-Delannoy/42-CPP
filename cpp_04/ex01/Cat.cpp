@@ -6,7 +6,7 @@
 /*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/05 18:54:24 by edelanno          #+#    #+#             */
-/*   Updated: 2025/07/05 20:34:17 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/07/06 14:30:32 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ Cat::Cat (const Cat& copy)
 {
 	std::cout << "Copy Cat constructor called" << std::endl;
 	_type = copy._type;
+	this->_brain = new Brain(*copy._brain);
 }
 
 Cat::~Cat()

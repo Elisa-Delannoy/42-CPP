@@ -6,7 +6,7 @@
 /*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/05 17:01:56 by edelanno          #+#    #+#             */
-/*   Updated: 2025/07/05 20:33:28 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/07/06 14:51:58 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ class Dog : public Animal
 		Dog& operator=(const Dog& new_dog);
 		
 		void	makeSound() const;
+		Brain	getBrain()const;
 };
 
 #endif
