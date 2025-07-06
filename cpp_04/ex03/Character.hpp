@@ -1,39 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Character.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/05 15:58:53 by edelanno          #+#    #+#             */
-/*   Updated: 2025/07/06 16:28:44 by edelanno         ###   ########.fr       */
+/*   Created: 2025/07/06 17:21:01 by edelanno          #+#    #+#             */
+/*   Updated: 2025/07/06 17:34:06 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+#ifndef CHARACTER_HPP
+# define CHARACTER_HPP
 
-#include <string>
-#include <iostream>
-#include "Brain.hpp"
+#include "AMateria.hpp"
 
-class Dog;
-class Cat;
-
-class Animal
+class ICharacter
 {
-	protected:
-		std::string	_type;
-
 	public:
-		Animal();
-		Animal (const Animal& copy);
-		virtual ~Animal();
-		Animal& operator=(const Animal& new_animal);
-		
-		virtual void		makeSound() const;
-		virtual Brain		getBrain()const;
-		const std::string	getType() const;
+	virtual ~ICharacter() {}
+	
+	virtual std::string const&	getName() const = 0;
+	virtual void				equip(AMateria* m) = 0;
+	virtual void				uneauip(int idx) = 0;
+	virtual void				use(int idx, ICharacter& target) = 0;
 };
 
 #endif

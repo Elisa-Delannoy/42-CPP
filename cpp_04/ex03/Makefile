@@ -6,7 +6,7 @@
 #    By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/05 15:46:54 by edelanno          #+#    #+#              #
-#    Updated: 2025/07/06 17:11:08 by edelanno         ###   ########.fr        #
+#    Updated: 2025/07/06 17:10:56 by edelanno         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = animal
 
 CFLAGS = c++ -Wall -Wextra -Werror -std=c++98
 
-SRC = main.cpp Dog.cpp Cat.cpp Animal.cpp WrongAnimal.cpp WrongCat.cpp Brain.cpp
+SRC = main.cpp
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)

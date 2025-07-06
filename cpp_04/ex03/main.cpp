@@ -6,7 +6,7 @@
 /*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/05 15:56:58 by edelanno          #+#    #+#             */
-/*   Updated: 2025/07/06 16:36:00 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/07/06 16:22:08 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,17 @@
 #include "Cat.hpp"
 #include "WrongAnimal.hpp"
 #include "WrongCat.hpp"
+#include "Brain.hpp"
 
 int main()
 {
-	const Animal* meta = new Animal();
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
+	AAnimal* j = new Dog();
+	const AAnimal* i = new Cat();
 	Cat	d;
 	const WrongAnimal* wmeta = new WrongAnimal();
 	const WrongAnimal* wi = new WrongCat();
-	
-	std::cout << "\nmeta = " << meta->getType() << std::endl;
-	meta->makeSound();
-	std::cout << "j = " << j->getType() << std::endl;
+
+	std::cout << "\nj = " << j->getType() << std::endl;
 	j->makeSound(); //will output the cat sound!
 	std::cout << "i = " << i->getType() << std::endl;
 	i->makeSound();
@@ -38,7 +36,7 @@ int main()
 	delete i;
 	
 	i = j;
-	const Animal* k = new Cat(d);
+	const AAnimal* k = new Cat(d);
 	
 	std::cout << "\nj = " << j->getType() << std::endl;
 	std::cout << "i = " << i->getType() << std::endl;
@@ -54,7 +52,6 @@ int main()
 	wmeta->makeSound();
 	std::cout << std::endl;
 
-	delete meta;
 	delete j;
 	delete k;
 	delete wmeta;
