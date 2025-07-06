@@ -6,7 +6,7 @@
 /*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/05 15:56:58 by edelanno          #+#    #+#             */
-/*   Updated: 2025/07/06 15:25:24 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/07/06 15:37:50 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,19 @@ int main()
 			<< test_brain.getFirstIdea() << std::endl;
 		delete animal[i];
 	}
+
+	Cat 	test;
+	Brain	cat_test("I have a brain");
+	std::cout << "\ntest = " << test.getType() << ": "
+		<< cat_test.getFirstIdea() << std::endl;
+	Cat copy(test);
+	std::cout << "\ncopy = " << copy.getType() << ": "
+		<< cat_test.getFirstIdea() << std::endl;
+	Cat op;
+
+	op = copy;
+	std::cout << "\nop = " << copy.getType() << ": "
+		<< cat_test.getFirstIdea() << std::endl;
+	
 	return (0);
 }

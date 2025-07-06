@@ -6,7 +6,7 @@
 /*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/05 20:13:11 by edelanno          #+#    #+#             */
-/*   Updated: 2025/07/06 15:00:09 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/07/06 15:34:13 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ class Brain
 
 	public:
 		Brain();
+		Brain(std::string idea);
 		Brain (const Brain& copy);
 		~Brain();
 		Brain& operator=(const Brain& new_brain);
