@@ -6,7 +6,7 @@
 /*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/05 16:04:00 by edelanno          #+#    #+#             */
-/*   Updated: 2025/07/05 20:18:26 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/07/06 14:06:39 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ Animal& Animal::operator=(const Animal& new_animal)
 
 void	Animal::makeSound() const
 {
-	std::cout << "default sound" << std::endl;
+	std::cout << "... no sound" << std::endl;
 }
 
 const std::string	Animal::getType() const

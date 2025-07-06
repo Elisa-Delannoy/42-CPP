@@ -6,7 +6,7 @@
 #    By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/05 15:46:54 by edelanno          #+#    #+#              #
-#    Updated: 2025/07/05 20:04:26 by edelanno         ###   ########.fr        #
+#    Updated: 2025/07/06 13:41:57 by edelanno         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ all: $(NAME)
 	@echo "\033[32mCompilation successful !\033[0m"
 
 $(NAME): $(OBJ)
-	$(CFLAGS) $(OBJ) -o $@
+	@$(CFLAGS) $(OBJ) -o $@
 
 %.o:%.cpp
 	@echo "Compilating $@"
