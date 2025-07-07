@@ -10,51 +10,28 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
-#include "Dog.hpp"
-#include "Cat.hpp"
-#include "WrongAnimal.hpp"
-#include "WrongCat.hpp"
-#include "Brain.hpp"
+#include "IMateriaSource.hpp"
+#include "MateriaSource.hpp"
+#include "Character.hpp"
+#include "Ice.hpp"
+#include "Cure.hpp"
 
 int main()
 {
-	AAnimal* j = new Dog();
-	const AAnimal* i = new Cat();
-	Cat	d;
-	const WrongAnimal* wmeta = new WrongAnimal();
-	const WrongAnimal* wi = new WrongCat();
-
-	std::cout << "\nj = " << j->getType() << std::endl;
-	j->makeSound(); //will output the cat sound!
-	std::cout << "i = " << i->getType() << std::endl;
-	i->makeSound();
-	std::cout << "d = " << d.getType() << std::endl;
-	d.makeSound();
-	
-	std::cout << std::endl;
-	delete i;
-	
-	i = j;
-	const AAnimal* k = new Cat(d);
-	
-	std::cout << "\nj = " << j->getType() << std::endl;
-	std::cout << "i = " << i->getType() << std::endl;
-	std::cout << "d = " << d.getType() << std::endl;
-	std::cout << "k = " << k->getType() << std::endl;
-	j->makeSound();
-	i->makeSound();
-	d.makeSound();
-	k->makeSound();
-
-	std::cout << "\nwi = " << wi->getType() << std::endl;
-	wi->makeSound();
-	wmeta->makeSound();
-	std::cout << std::endl;
-
-	delete j;
-	delete k;
-	delete wmeta;
-	delete wi;
-	return (0);
+	IMateriaSource* src = new MateriaSource();
+	src->learnMateria(new Ice());
+	src->learnMateria(new Cure());
+	ICharacter* me = new Character("me");
+	AMateria* tmp;
+	tmp = src->createMateria("ice");
+	me->equip(tmp);
+	tmp = src->createMateria("cure");
+	me->equip(tmp);
+	ICharacter* bob = new Character("bob");
+	me->use(0, *bob);
+	me->use(1, *bob);
+	delete bob;
+	delete me;
+	delete src;
+	return 0;
 }

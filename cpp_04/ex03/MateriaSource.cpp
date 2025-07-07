@@ -10,3 +10,64 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "MateriaSource.hpp"
+#include "AMateria.hpp"
+
+MateriaSource::MateriaSource() : IMateriaSource()
+{
+	for (int i = 0; i < 4; i++)
+		_stock[i] = 0;
+}
+
+MateriaSource::~MateriaSource()
+{
+	for (int i = 0; i < 4; i++)
+		delete _stock[i];
+}
+
+MateriaSource::MateriaSource(const MateriaSource& copy)
+{
+	for (int i = 0; i < 4; i++)
+	{
+		delete _stock[i];
+		_stock[i] = copy._stock[i]->clone();
+	}
+}
+
+MateriaSource& MateriaSource::operator=(const MateriaSource& new_MateriaSource)
+{
+	if (this != &new_MateriaSource)
+	{
+		for (int i = 0; i < 4; i++)
+		{
+			delete _stock[i];
+			_stock[i] = new_MateriaSource._stock[i]->clone();
+		}
+	}
+	return (*this);
+}
+
+void	MateriaSource::learnMateria(AMateria* to_copy)
+{
+	int	i = 0;
+	while(_stock[i] != 0)
+		i++;
+	if (i >= 4)
+		std::cout << "Materia source is full, impossible to stock Materia" << std::endl;
+	else
+		_stock[i] = to_copy;
+}
+
+AMateria*	MateriaSource::createMateria(std::string const & type)
+{
+	int	i = 0;
+	while (i < 4)
+	{
+		if(_stock[i] && _stock[i]->getType() == type)
+			return (_stock[i]->clone());
+		i++;
+	}
+	if (i >= 4)
+		std::cout << "No matching type" << std::endl;
+	return (0);
+}

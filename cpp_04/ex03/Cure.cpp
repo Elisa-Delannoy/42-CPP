@@ -12,6 +12,11 @@
 
 #include "Cure.hpp"
 
+Cure::Cure() : AMateria(), _type("cure")
+{
+}
+
+
 Cure::Cure(std::string const& type) : AMateria(type), _type(type)
 {
 }

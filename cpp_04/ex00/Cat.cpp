@@ -13,7 +13,6 @@
 #include "Animal.hpp"
 #include "Cat.hpp"
 
-
 Cat::Cat() : Animal()
 {
 	std::cout << "Default Cat constructor called" << std::endl;

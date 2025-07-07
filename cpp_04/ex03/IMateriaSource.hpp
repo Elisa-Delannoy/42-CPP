@@ -1,35 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cure.hpp                                           :+:      :+:    :+:   */
+/*   IMateriaSource.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/06 17:21:45 by edelanno          #+#    #+#             */
-/*   Updated: 2025/07/07 09:38:10 by edelanno         ###   ########.fr       */
+/*   Created: 2025/07/07 08:07:56 by edelanno          #+#    #+#             */
+/*   Updated: 2025/07/07 08:09:56 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CURE_HPP
-# define CURE_HPP
+#ifndef IMATERIA_SOURCE_HPP
+# define IMATERIA_SOURCE_HPP
 
 #include "AMateria.hpp"
-#include "Character.hpp"
 
-class Cure : public AMateria
+class IMateriaSource
 {
-	private:
-		std::string	_type;
-		
 	public:
-		Cure();
-		Cure(std::string const& type);
-		~Cure();
-		Cure(const Cure& copy);
-		Cure& operator=(const Cure& new_cure);
+		IMateriaSource();
+		IMateriaSource(const IMateriaSource& copy);
+		IMateriaSource& operator=(const IMateriaSource& new_imateriaSource);
+		virtual ~IMateriaSource();
 
-		AMateria*	clone() const;
-		void 		use(ICharacter& target);
+		virtual void learnMateria(AMateria*) = 0;
+		virtual AMateria* createMateria(std::string const & type) = 0;
 };
 
 #endif

@@ -15,7 +15,8 @@
 
 #include <iostream>
 #include <string>
-#include "Character.hpp"
+
+class ICharacter;
 
 class AMateria
 {
@@ -23,8 +24,9 @@ class AMateria
 		std::string _type;
 		
 	public:
+		AMateria();
 		AMateria(std::string const& type);
-		~AMateria();
+		virtual ~AMateria();
 		AMateria(const AMateria& copy);
 		AMateria& operator=(const AMateria& new_amateria);
 

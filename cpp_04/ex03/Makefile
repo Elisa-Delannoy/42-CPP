@@ -14,7 +14,7 @@ NAME = animal
 
 CFLAGS = c++ -Wall -Wextra -Werror -std=c++98
 
-SRC = main.cpp
+SRC = ./AMateria.cpp ./Character.cpp ./Cure.cpp ./ICharacter.cpp ./IMateriaSource.cpp ./Ice.cpp ./MateriaSource.cpp ./main.cpp 
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)

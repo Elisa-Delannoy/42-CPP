@@ -12,6 +12,10 @@
 
 #include "AMateria.hpp"
 
+AMateria::AMateria() : _type("default")
+{
+}
+
 AMateria::AMateria(std::string const& type) : _type(type)
 {
 }
@@ -40,7 +44,6 @@ std::string const&	AMateria::getType() const
 
 void 	AMateria::use(ICharacter& target)
 {
+	(void) target;
 	std::cout << "..." << std::endl;
 }
-
-
