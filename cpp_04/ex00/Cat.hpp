@@ -6,7 +6,7 @@
 /*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/05 18:54:21 by edelanno          #+#    #+#             */
-/*   Updated: 2025/07/05 19:59:17 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/07/07 09:45:44 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 # define CAT_HPP
 
 #include "Animal.hpp"
-
-class Animal;
 
 class Cat : public Animal
 {

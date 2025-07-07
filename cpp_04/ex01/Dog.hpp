@@ -6,7 +6,7 @@
 /*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/05 17:01:56 by edelanno          #+#    #+#             */
-/*   Updated: 2025/07/06 14:51:58 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/07/07 09:47:44 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 
 #include "Animal.hpp"
 #include "Brain.hpp"
-
-class Animal;
 
 class Dog : public Animal
 {

@@ -6,7 +6,7 @@
 /*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/05 19:57:51 by edelanno          #+#    #+#             */
-/*   Updated: 2025/07/06 14:22:03 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/07/07 09:42:43 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,10 @@ WrongAnimal::~WrongAnimal()
 	std::cout << "Default WrongAnimal destructor called" << std::endl;
 }
 
-WrongAnimal& WrongAnimal::operator=(const WrongAnimal& new_Wronganimal)
+WrongAnimal& WrongAnimal::operator=(const WrongAnimal& new_wronganimal)
 {
 	std::cout << "Assignment WrongAnimal called" << std::endl;
-	_type = new_Wronganimal._type;
+	_type = new_wronganimal._type;
 	return (*this);
 }
 

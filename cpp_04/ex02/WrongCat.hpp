@@ -6,7 +6,7 @@
 /*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/05 20:01:34 by edelanno          #+#    #+#             */
-/*   Updated: 2025/07/05 20:02:18 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/07/07 09:46:21 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 # define WrongCAT_HPP
 
 #include "WrongAnimal.hpp"
-
-class WrongAnimal;
 
 class WrongCat : public WrongAnimal
 {
@@ -25,7 +23,7 @@ class WrongCat : public WrongAnimal
 		WrongCat();
 		WrongCat (const WrongCat& copy);
 		~WrongCat();
-		WrongCat& operator=(const WrongCat& new_Wrongcat);
+		WrongCat& operator=(const WrongCat& new_wrongcat);
 		
 		void	makeSound() const;
 };

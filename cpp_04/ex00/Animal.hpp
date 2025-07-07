@@ -6,7 +6,7 @@
 /*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/05 15:58:53 by edelanno          #+#    #+#             */
-/*   Updated: 2025/07/05 19:59:11 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/07/07 09:45:32 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,6 @@
 
 #include <string>
 #include <iostream>
-
-class Dog;
-class Cat;
 
 class Animal
 {

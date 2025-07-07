@@ -6,7 +6,7 @@
 /*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/05 18:54:24 by edelanno          #+#    #+#             */
-/*   Updated: 2025/07/05 20:26:21 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/07/07 09:40:46 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ Cat::Cat() : Animal()
 	this->_type = "Cat";
 }
 
-Cat::Cat (const Cat& copy)
+Cat::Cat (const Cat& copy) : Animal(copy)
 {
 	std::cout << "Copy Cat constructor called" << std::endl;
 	_type = copy._type;

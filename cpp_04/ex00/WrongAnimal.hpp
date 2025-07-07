@@ -6,7 +6,7 @@
 /*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/05 19:59:01 by edelanno          #+#    #+#             */
-/*   Updated: 2025/07/05 20:26:35 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/07/07 09:42:49 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class WrongAnimal
 		WrongAnimal();
 		WrongAnimal (const WrongAnimal& copy);
 		~WrongAnimal();
-		WrongAnimal& operator=(const WrongAnimal& new_Wronganimal);
+		WrongAnimal& operator=(const WrongAnimal& new_wronganimal);
 		
 		void				makeSound() const;
 		const std::string 	getType() const;

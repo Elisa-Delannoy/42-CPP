@@ -6,7 +6,7 @@
 /*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/05 15:58:53 by edelanno          #+#    #+#             */
-/*   Updated: 2025/07/06 16:13:53 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/07/07 09:49:05 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,6 @@
 #include <string>
 #include <iostream>
 #include "Brain.hpp"
-
-class Dog;
-class Cat;
 
 class AAnimal
 {

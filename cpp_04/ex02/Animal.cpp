@@ -6,7 +6,7 @@
 /*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/05 16:04:00 by edelanno          #+#    #+#             */
-/*   Updated: 2025/07/06 15:59:51 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/07/07 09:08:38 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,6 @@ AAnimal& AAnimal::operator=(const AAnimal& new_Aanimal)
 	if (this != &new_Aanimal)
 		_type = new_Aanimal._type;
 	return (*this);
-}
-
-void	AAnimal::makeSound() const
-{
-	std::cout << "... no sound" << std::endl;
 }
 
 Brain		AAnimal::getBrain() const
