@@ -6,17 +6,18 @@
 /*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/06 17:48:59 by edelanno          #+#    #+#             */
-/*   Updated: 2025/07/06 17:52:43 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/07/08 14:54:50 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Ice.hpp"
+#include "ICharacter.hpp"
 
-Ice::Ice() : AMateria(), _type("ice")
+Ice::Ice() : AMateria("ice")
 {
 }
 
-Ice::Ice(std::string const& type) : AMateria(type), _type(type)
+Ice::Ice(std::string const& type) : AMateria(type)
 {
 }
 
@@ -47,5 +48,5 @@ AMateria*	Ice::clone() const
 
 void 	Ice::use(ICharacter& target)
 {
-	std::cout << "* shoots an ice bolt at " << target.getName() << " *";
+	std::cout << "* shoots an ice bolt at " <<  target.getName() << " *" << std::endl;
 }

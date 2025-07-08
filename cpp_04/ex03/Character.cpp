@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Character.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edelanno <edelanno <edelanno@student.42    +#+  +:+       +#+        */
+/*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/06 17:20:59 by edelanno          #+#    #+#             */
-/*   Updated: 2025/07/07 11:59:38 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/07/08 15:06:22 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,9 @@ Character::Character() : ICharacter()
 {
 }
 
-Character::Character(std::string name) : ICharacter(name)
+Character::Character(std::string name) : ICharacter()
 {
+	_name = name;
 	for (int i = 0; i < 4; i++)
 		_inventory[i] = 0;
 }
@@ -57,7 +58,8 @@ Character& Character::operator=(const Character& new_character)
 
 std::string const&	Character::getName() const
 {
-	return (_name);
+	// std::cout << this->_name << "name\n" << std::endl;
+	return (this->_name);
 }
 
 void	Character::equip(AMateria* m)

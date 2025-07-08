@@ -17,13 +17,8 @@
 
 class ICharacter
 {
-	protected:
-		std::string	_name;
-		AMateria*	_inventory[4];
-		
 	public:
 		ICharacter();
-		ICharacter(std::string name);
 		ICharacter(const ICharacter& copy);
 		ICharacter& operator=(const ICharacter& new_icharacter);
 		virtual ~ICharacter();

@@ -6,7 +6,7 @@
 /*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/06 17:12:42 by edelanno          #+#    #+#             */
-/*   Updated: 2025/07/07 08:19:18 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/07/08 14:28:16 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ class AMateria
 
 		std::string const&	getType() const;
 		virtual AMateria*	clone() const = 0;
-		virtual void 		use(ICharacter& target);
+		virtual void		use(ICharacter& target);
 };
 
 #endif

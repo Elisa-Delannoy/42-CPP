@@ -6,18 +6,19 @@
 /*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/06 17:21:52 by edelanno          #+#    #+#             */
-/*   Updated: 2025/07/07 10:14:31 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/07/08 15:07:54 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cure.hpp"
+#include "ICharacter.hpp"
 
-Cure::Cure() : AMateria(), _type("cure")
+Cure::Cure() : AMateria("cure")
 {
 }
 
 
-Cure::Cure(std::string const& type) : AMateria(type), _type(type)
+Cure::Cure(std::string const& type) : AMateria(type)
 {
 }
 
@@ -48,5 +49,5 @@ AMateria*	Cure::clone() const
 
 void 	Cure::use(ICharacter& target)
 {
-	std::cout << "* heals " << target.getName() << " wounds *";
+	std::cout << "* heals " << target.getName() << " wounds *" << std::endl;
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Ice.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edelanno <edelanno <edelanno@student.42    +#+  +:+       +#+        */
+/*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/06 17:21:28 by edelanno          #+#    #+#             */
-/*   Updated: 2025/07/07 11:35:49 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/07/08 13:09:06 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 class Ice : public AMateria
 {
 	private:
-		std::string	_type;
+		// std::string	_type;
 
 	public:
 		Ice();

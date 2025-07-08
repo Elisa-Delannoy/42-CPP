@@ -6,7 +6,7 @@
 /*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/06 17:12:39 by edelanno          #+#    #+#             */
-/*   Updated: 2025/07/07 10:21:07 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/07/08 14:25:05 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,6 @@ std::string const&	AMateria::getType() const
 {
 	return (_type);
 }
-
 
 void 	AMateria::use(ICharacter& target)
 {

@@ -6,7 +6,7 @@
 /*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/07 08:07:53 by edelanno          #+#    #+#             */
-/*   Updated: 2025/07/07 08:07:54 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/07/08 13:11:43 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,14 +60,11 @@ void	MateriaSource::learnMateria(AMateria* to_copy)
 
 AMateria*	MateriaSource::createMateria(std::string const & type)
 {
-	int	i = 0;
-	while (i < 4)
+	for (int i = 0; i < 4; i++)
 	{
 		if(_stock[i] && _stock[i]->getType() == type)
 			return (_stock[i]->clone());
-		i++;
 	}
-	if (i >= 4)
-		std::cout << "No matching type" << std::endl;
+	std::cout << "No matching type" << std::endl;
 	return (0);
 }
