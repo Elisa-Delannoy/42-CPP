@@ -18,9 +18,6 @@
 
 class Cure : public AMateria
 {
-	private:
-		std::string	_type;
-		
 	public:
 		Cure();
 		Cure(std::string const& type);

@@ -49,6 +49,8 @@ MateriaSource& MateriaSource::operator=(const MateriaSource& new_MateriaSource)
 
 void	MateriaSource::learnMateria(AMateria* to_copy)
 {
+	if (!to_copy)
+		return;
 	int	i = 0;
 	while(_stock[i] != 0)
 		i++;

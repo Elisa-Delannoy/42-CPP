@@ -19,9 +19,6 @@
 
 class Ice : public AMateria
 {
-	private:
-		// std::string	_type;
-
 	public:
 		Ice();
 		Ice(std::string const& type);

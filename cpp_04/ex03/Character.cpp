@@ -58,13 +58,14 @@ Character& Character::operator=(const Character& new_character)
 
 std::string const&	Character::getName() const
 {
-	// std::cout << this->_name << "name\n" << std::endl;
 	return (this->_name);
 }
 
 void	Character::equip(AMateria* m)
 {
 	int	i = 0;
+	if (!m)
+		return;
 	while(_inventory[i] != 0)
 		i++;
 	if (i >= 4)
@@ -75,7 +76,7 @@ void	Character::equip(AMateria* m)
 
 void	Character::unequip(int idx)
 {
-	if (_inventory[idx] == 0)
+	if (_inventory[idx] == 0 || idx < 0 || idx >= 4)
 		std::cout << "This Materia does not exist, impossible de delete" << std::endl;
 	else
 		_inventory[idx] = 0;		
@@ -83,7 +84,7 @@ void	Character::unequip(int idx)
 
 void	Character::use(int idx, ICharacter& target)
 {
-	if (_inventory[idx] == 0)
+	if (_inventory[idx] == 0 || idx < 0 || idx >= 4)
 		std::cout << "This Materia can not be used" << std::endl;
 	else
 		_inventory[idx]->use(target);
