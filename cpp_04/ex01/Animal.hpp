@@ -17,9 +17,6 @@
 #include <iostream>
 #include "Brain.hpp"
 
-class Dog;
-class Cat;
-
 class Animal
 {
 	protected:
