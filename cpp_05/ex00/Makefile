@@ -5,33 +5,34 @@
 #                                                     +:+ +:+         +:+      #
 #    By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/07/08 09:52:25 by edelanno          #+#    #+#              #
-#    Updated: 2025/07/08 10:14:37 by edelanno         ###   ########.fr        #
+#    Created: 2025/07/05 15:46:54 by edelanno          #+#    #+#              #
+#    Updated: 2025/07/09 14:57:45 by edelanno         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = bureaucrat
+NAME = bureaucrate
 
 CFLAGS = c++ -Wall -Wextra -Werror -std=c++98
 
-SRC =
+SRC = main.cpp Bureaucrat.cpp
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)
 	@echo "\033[32mCompilation successful !\033[0m"
 
-$(NAME) = $(OBJ)
-	$(CFLAGS) $(OBJ) -o $@
+$(NAME): $(OBJ)
+	@$(CFLAGS) $(OBJ) -o $@
 
 %.o:%.cpp
-	$(CFLAGS) $(OBJ) -c $< -o $@
+	@echo "Compilating $@"
+	@$(CFLAGS) -c $< -o $@
 
 clean:
-	@rm -rf $(NAME)
+	@rm -f $(OBJ)
 	@echo "\033[32mClean ok\033[0m"
 
-flcean:
-	@rm -rf $(OBJ)
+fclean: clean
+	@rm -f $(NAME)
 	@echo "\033[32mClean ok\033[0m"
 
 re: fclean all
