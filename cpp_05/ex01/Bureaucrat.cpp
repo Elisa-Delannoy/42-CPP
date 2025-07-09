@@ -6,12 +6,12 @@
 /*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 10:33:07 by edelanno          #+#    #+#             */
-/*   Updated: 2025/07/09 17:33:09 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/07/09 17:38:28 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-
+#include "Form.hpp"
 
 Bureaucrat::Bureaucrat() : _name("default"), _grade(100)
 {
@@ -88,6 +88,20 @@ void	Bureaucrat::decrement_b()
 		std::cout << "Grade is already lowest grade, impossible to decrement" << std::endl;
 	else
 		this->_grade++;
+}
+
+void	Bureaucrat::signForm(Form& form)
+{
+	try
+	{
+		form.beSigned(*this);
+		std::cout << this->_name << " signed " << form.getName() << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cout << this->_name << " couldn't signed " << form.getName() 
+			<< e.what() << std::endl;
+	}
 }
 
 std::ostream& operator<<(std::ostream& out, const Bureaucrat& name)

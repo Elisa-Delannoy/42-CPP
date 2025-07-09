@@ -6,7 +6,7 @@
 /*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 10:33:12 by edelanno          #+#    #+#             */
-/*   Updated: 2025/07/09 17:33:11 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/07/09 17:38:17 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 # include <string>
 # include <iostream>
 # include <exception>
+
+class Form;
 
 class Bureaucrat
 {
@@ -34,7 +36,8 @@ class Bureaucrat
 		const std::string	getName() const;
 		int					getGrade() const;
 		void				increment_b();
-		void				decrement_b();	
+		void				decrement_b();
+		void				signForm(Form& form);
 		
 		class GradeTooHighException : public std::exception
 		{
