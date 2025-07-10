@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edelanno <edelanno <edelanno@student.42    +#+  +:+       +#+        */
+/*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 10:33:07 by edelanno          #+#    #+#             */
-/*   Updated: 2025/07/10 16:30:28 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/07/10 18:26:52 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,12 @@
 
 Bureaucrat::Bureaucrat() : _name("default"), _grade(100)
 {
-	std::cout << "default bureaucrat constructor called" << std::endl;
+	// std::cout << "default bureaucrat constructor called" << std::endl;
 }
 
 Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name)
 {
-	std::cout << this->_name << " name and grade bureaucrat constructor called" << std::endl;
+	// std::cout << this->_name << " name and grade bureaucrat constructor called" << std::endl;
 	try
 	{
 		if (grade < 1)
@@ -37,12 +37,12 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name)
 
 Bureaucrat::Bureaucrat(const Bureaucrat& copy) : _name(copy._name), _grade(copy._grade)
 {
-	std::cout << "copy bureaucrat constructor called" << std::endl;
+	// std::cout << "copy bureaucrat constructor called" << std::endl;
 }
 
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat& new_bureaucrat) 
 {
-	std::cout << "assignment operator bureaucrat constructor called" << std::endl;
+	// std::cout << "assignment operator bureaucrat constructor called" << std::endl;
 	
 	if (this != &new_bureaucrat)
 		this->_grade = new_bureaucrat._grade;
@@ -51,7 +51,7 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat& new_bureaucrat)
 
 Bureaucrat::~Bureaucrat()
 {
-	std::cout << "default bureaucrat destructor called" << std::endl;
+	// std::cout << "default bureaucrat destructor called" << std::endl;
 }
 
 const char* Bureaucrat::GradeTooHighException::what() const throw()

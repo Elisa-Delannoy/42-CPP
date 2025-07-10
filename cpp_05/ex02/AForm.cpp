@@ -58,22 +58,22 @@ AForm::~AForm()
 
 const char* AForm::GradeTooHighException::what() const throw()
 {
-	return ("Grade is too high\n");
+	return ("Grade is too high");
 }
 
 const char* AForm::GradeTooLowException::what() const throw()
 {
-	return ("his grade is too low\n");
+	return ("his grade is too low");
 }
 
 const char* AForm::AlreadySignedException::what() const throw()
 {
-	return ("it is already signed\n");
+	return ("it is already signed");
 }
 
 const char* AForm::NotSignedException::what() const throw()
 {
-	return ("it is not signed, so it can not be executed\n");
+	return ("it is not signed");
 }
 const std::string	AForm::getName() const
 {
