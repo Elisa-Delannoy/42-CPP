@@ -6,7 +6,7 @@
 /*   By: edelanno <edelanno <edelanno@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/10 11:49:26 by edelanno          #+#    #+#             */
-/*   Updated: 2025/07/10 11:56:32 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/07/10 14:41:56 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,21 @@
 
 # include <string>
 # include <iostream>
+# include "AForm.hpp"
 
-class RobotomyRequestForm
+class RobotomyRequestForm : public AForm
 {
 	private:
+        std::string	_target;
 
 	public:
 		RobotomyRequestForm();
-		RobotomyRequestForm(std::string name, int grade);
+		RobotomyRequestForm(std::string target);
 		RobotomyRequestForm(const RobotomyRequestForm& copy);
 		RobotomyRequestForm& operator=(const RobotomyRequestForm& new_robotomyrequestform);
 		~RobotomyRequestForm();
+
+        void	execute(Bureaucrat const & executor) const;
 
 };
 

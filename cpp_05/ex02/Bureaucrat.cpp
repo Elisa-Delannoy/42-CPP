@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
+/*   By: edelanno <edelanno <edelanno@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 10:33:07 by edelanno          #+#    #+#             */
-/*   Updated: 2025/07/09 17:38:28 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/07/10 16:30:28 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
 
 Bureaucrat::Bureaucrat() : _name("default"), _grade(100)
 {
@@ -90,17 +90,31 @@ void	Bureaucrat::decrement_b()
 		this->_grade++;
 }
 
-void	Bureaucrat::signForm(Form& form)
+void	Bureaucrat::signAForm(AForm& Aform)
 {
 	try
 	{
-		form.beSigned(*this);
-		std::cout << this->_name << " signed " << form.getName() << std::endl;
+		Aform.beSigned(*this);
+		std::cout << this->_name << " signed " << Aform.getName() << std::endl;
 	}
 	catch(const std::exception& e)
 	{
-		std::cout << this->_name << " couldn't sign " << form.getName() 
-			<< " beacause " << e.what() << std::endl;
+		std::cout << this->_name << " couldn't sign " << Aform.getName() 
+			<< " because " << e.what() << std::endl;
+	}
+}
+
+void	Bureaucrat::executeAForm(AForm const & Aform) const
+{
+	try
+	{
+		Aform.check_exec(*this);
+		std::cout << this->_name << " executed " << Aform.getName() << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cout << this->_name << " couldn't execute " << Aform.getName() 
+			<< " because " << e.what() << std::endl;
 	}
 }
 

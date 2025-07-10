@@ -3,18 +3,18 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+         #
+#    By: edelanno <edelanno <edelanno@student.42    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/05 15:46:54 by edelanno          #+#    #+#              #
-#    Updated: 2025/07/09 17:35:13 by edelanno         ###   ########.fr        #
+#    Updated: 2025/07/10 16:08:29 by edelanno         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = bureaucrate
+NAME = form
 
 CFLAGS = c++ -Wall -Wextra -Werror -std=c++98
 
-SRC = main.cpp Bureaucrat.cpp Form.cpp
+SRC = main.cpp Bureaucrat.cpp AForm.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp ShrubberyCreationForm.cpp
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)
@@ -22,6 +22,7 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	@$(CFLAGS) $(OBJ) -o $@
+
 
 %.o:%.cpp
 	@echo "Compilating $@"

@@ -1,0 +1,54 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   RobotomyRequestForm.cpp                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: edelanno <edelanno <edelanno@student.42    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/07/10 14:38:03 by edelanno          #+#    #+#             */
+/*   Updated: 2025/07/10 16:30:33 by edelanno         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "RobotomyRequestForm.hpp"
+#include "Bureaucrat.hpp"
+#include "AForm.hpp"
+#include <cstdlib>
+#include <ctime> 
+
+RobotomyRequestForm::RobotomyRequestForm() : AForm(), _target("default")
+{
+	std::srand(std::time(0));
+}
+
+RobotomyRequestForm::RobotomyRequestForm(std::string target) : AForm("RobotomyRequestForm", 72, 45), _target(target)
+{
+}
+
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& copy) :  AForm(copy)
+{
+	this->_target = copy._target;
+}
+
+RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm& new_presidentiapardonform)
+{
+	if (this != &new_presidentiapardonform)
+		this->_target = new_presidentiapardonform._target;
+	return (*this);
+}
+
+RobotomyRequestForm::~RobotomyRequestForm()
+{
+
+}
+
+void	RobotomyRequestForm::execute(Bureaucrat const & executor) const
+{
+	(void) executor;
+	std::cout << "Drilling noises: vrrrrrr" << std::endl;
+	
+	if (rand() % 2 == 0)
+		std::cout << this->_target << " has been robotomized" << std::endl;
+	else
+		std::cout << this->_target << " robotomy failed" << std::endl;
+}

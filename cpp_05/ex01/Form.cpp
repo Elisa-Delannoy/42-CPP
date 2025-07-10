@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
+/*   By: edelanno <edelanno <edelanno@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 15:23:15 by edelanno          #+#    #+#             */
-/*   Updated: 2025/07/09 17:40:38 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/07/10 16:21:18 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,8 +103,13 @@ bool	Form::beSigned(const Bureaucrat& name)
 
 std::ostream& operator<<(std::ostream& out, const Form& name)
 {
-	out <<"Form: " << name.getName() << ", signed status " << name.getSigned()
-		<< ", grade required to sign this form is " << name.getGradeSign()
+	std::string	sign_status;
+	if (name.getSigned() == 1)
+		sign_status = "signed";
+	else
+		sign_status = "not signed";
+	out <<"AForm: " << name.getName() << ", is " << name.getSigned()
+		<< ", grade required to sign this Aform is " << name.getGradeSign()
 		<< " and grade required to execute it is " << name.getGradeExec();
 	return (out);
 }

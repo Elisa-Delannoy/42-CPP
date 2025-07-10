@@ -3,43 +3,42 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
+/*   By: edelanno <edelanno <edelanno@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 10:33:14 by edelanno          #+#    #+#             */
-/*   Updated: 2025/07/09 17:33:36 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/07/10 16:07:02 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
+#include "PresidentialPardonForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 
 int main()
 {
-	Bureaucrat	bur("bob", 1);
-	Bureaucrat	toto("toto", 70);
-	Form		forms("convention", 3);
-	Form		f("law", 30);
-
-	std::cout << "\n" << bur << std::endl;
-	bur.increment_b();
-	bur.decrement_b();
-	std::cout << bur << std::endl;
-	bur.increment_b();
-	std::cout << bur << "\n" << std::endl;
-
-	std::cout << forms << "\n" << std::endl;
-	// forms.beSigned(bur);
-	// forms.beSigned(toto);
-	toto.signForm(forms);
-	bur.signForm(forms);
-	std::cout << forms << "\n" << std::endl;
-	bur.signForm(forms);
-	std::cout << forms << "\n" << std::endl;
-	toto.signForm(f);
-	bur.signForm(f);
-	std::cout << f << "\n" << std::endl;
+	Bureaucrat				bur("bob", 1);
+	Bureaucrat				toto("toto", 70);
+	PresidentialPardonForm	pres("president");
+	RobotomyRequestForm		rob("robot");
+	ShrubberyCreationForm	tree("tree");
+	
+	AForm* form = new PresidentialPardonForm("test aform");	
 
 
+
+	bur.executeAForm(pres);
+	toto.executeAForm(pres);
+
+	bur.executeAForm(rob);
+	toto.executeAForm(rob);
+
+	bur.executeAForm(tree);
+	toto.executeAForm(tree);
+
+	bur.executeAForm(*form);
+	toto.executeAForm(*form);
 	
 	return (0);
 }
