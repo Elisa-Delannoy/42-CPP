@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "Form.hpp"
-#include "Bureaucrat.cpp"
+#include "Bureaucrat.hpp"
 
 
 Form::Form() : _name("default"), _signed(false), _grade_sign(5), _grade_exec(20)
@@ -56,10 +56,19 @@ Form::~Form()
 }
 
 
+const char* Form::GradeTooHighException::what() const throw()
+{
+	return ("Grade is too high\n");
+}
+
 const char* Form::GradeTooLowException::what() const throw()
 {
+	return ("his grade is too low\n");
+}
 
-	return (" because his grade is not high enough\n");
+const char* Form::AlreadySignedException::what() const throw()
+{
+	return ("it is already signed\n");
 }
 
 const std::string	Form::getName() const
@@ -84,6 +93,8 @@ int	Form::getGradeExec() const
 
 bool	Form::beSigned(const Bureaucrat& name)
 {
+	if (this->_signed == true)
+		throw Form::AlreadySignedException();
 	if (name.getGrade() <= this->_grade_sign)
 		return(this->_signed = true);
 	else
@@ -92,7 +103,7 @@ bool	Form::beSigned(const Bureaucrat& name)
 
 std::ostream& operator<<(std::ostream& out, const Form& name)
 {
-	out << name.getName() << ", Form signed status " << name.getSigned()
+	out <<"Form: " << name.getName() << ", signed status " << name.getSigned()
 		<< ", grade required to sign this form is " << name.getGradeSign()
 		<< " and grade required to execute it is " << name.getGradeExec();
 	return (out);

@@ -16,7 +16,9 @@
 int main()
 {
 	Bureaucrat	bur("bob", 1);
-	Form		forms("convention", 5);
+	Bureaucrat	toto("toto", 70);
+	Form		forms("convention", 3);
+	Form		f("law", 30);
 
 	std::cout << "\n" << bur << std::endl;
 	bur.increment_b();
@@ -26,8 +28,17 @@ int main()
 	std::cout << bur << "\n" << std::endl;
 
 	std::cout << forms << "\n" << std::endl;
-	forms.beSigned(bur);
+	// forms.beSigned(bur);
+	// forms.beSigned(toto);
+	toto.signForm(forms);
+	bur.signForm(forms);
 	std::cout << forms << "\n" << std::endl;
+	bur.signForm(forms);
+	std::cout << forms << "\n" << std::endl;
+	toto.signForm(f);
+	bur.signForm(f);
+	std::cout << f << "\n" << std::endl;
+
 
 	
 	return (0);
