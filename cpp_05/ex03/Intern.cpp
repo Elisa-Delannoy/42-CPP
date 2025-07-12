@@ -6,7 +6,7 @@
 /*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/10 18:47:11 by edelanno          #+#    #+#             */
-/*   Updated: 2025/07/10 21:18:18 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/07/12 17:36:07 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
 #include "ShrubberyCreationForm.hpp"
-
 
 Intern::Intern()
 {
@@ -37,11 +36,12 @@ Intern::~Intern()
 
 AForm*	Intern::makeForm(std::string name, std::string target)
 {
-	std::string	check[3] = {"RobotomyRequestForm", "PresidentialPardonForm", "ShrubberyCreationForm"};
+	std::string	check[3] = {"robotomy request", "presidential pardon", "shrubbery creation"};
 	
 	int i = 0;
 	while (i < 3 && name.compare(check[i]))
 		i++;
+
 	switch(i)
 	{
 		case (0):
@@ -49,7 +49,7 @@ AForm*	Intern::makeForm(std::string name, std::string target)
 			std::cout << "Intern creates " << check[i] << std::endl;
 			return (new RobotomyRequestForm(target));
 		}
-		
+
 		case (1):
 		{
 			std::cout << "Intern creates " << check[i] << std::endl;
@@ -60,7 +60,7 @@ AForm*	Intern::makeForm(std::string name, std::string target)
 		{
 			std::cout << "Intern creates " << check[i] << std::endl;
 			return (new ShrubberyCreationForm(target));
-		}		
+		}
 	}
 	std::cout << name << " does not exist" << std::endl;
 	return (0);

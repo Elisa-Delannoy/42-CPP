@@ -6,7 +6,7 @@
 /*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/10 11:46:28 by edelanno          #+#    #+#             */
-/*   Updated: 2025/07/10 18:38:11 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/07/12 15:45:00 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ PresidentialPardonForm::~PresidentialPardonForm()
 
 void	PresidentialPardonForm::execute(Bureaucrat const& executor) const
 {
-	(void) executor;
+	check_exec(executor);
 	std::cout << this->_target << " has been pardoned by Zaphod Beeblebrox" << std::endl;
 }
 

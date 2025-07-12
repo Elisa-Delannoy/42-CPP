@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edelanno <edelanno <edelanno@student.42    +#+  +:+       +#+        */
+/*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/10 13:50:06 by edelanno          #+#    #+#             */
-/*   Updated: 2025/07/10 16:30:58 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/07/12 15:43:02 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ ShrubberyCreationForm::~ShrubberyCreationForm()
 
 void	ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 {
-	(void) executor;
+	check_exec(executor);
 	std::ofstream shrubbery((this->_target + "_shrubbery").c_str());
 	if (!shrubbery)
 	{
@@ -59,7 +59,18 @@ void	ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 	shrubbery << "   ~  \\\\ //  ~   \n";
 	shrubbery << "_- -   | | _- _  \n";
 	shrubbery << "  _ -  | |   -_  \n";
-	shrubbery << "      // \\\\      \n";	
+	shrubbery << "      // \\\\      \n";
+	shrubbery << "                    \n";
+
+	shrubbery << "       _-_       \n";
+	shrubbery << "    /~~   ~~\\    \n";
+	shrubbery << " /~~         ~~\\ \n";
+	shrubbery << "{               }\n";
+	shrubbery << " \\  _-     -_  / \n";
+	shrubbery << "   ~  \\\\ //  ~   \n";
+	shrubbery << "_- -   | | _- _  \n";
+	shrubbery << "  _ -  | |   -_  \n";
+	shrubbery << "      // \\\\      \n";
 
 	shrubbery.close();	
 }

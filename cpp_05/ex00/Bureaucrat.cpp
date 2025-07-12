@@ -6,7 +6,7 @@
 /*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 10:33:07 by edelanno          #+#    #+#             */
-/*   Updated: 2025/07/09 17:33:09 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/07/12 14:49:31 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name)
 		else if (grade > 150)
 			throw Bureaucrat::GradeTooLowException();
 	}
-	catch(const std::exception& e)
+	catch (const std::exception& e)
 	{
 		std::cout << e.what() << std::endl;
 	}

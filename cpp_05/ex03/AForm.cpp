@@ -111,7 +111,6 @@ void	AForm::check_exec(Bureaucrat const & executor) const
 		throw AForm::NotSignedException();
 	if (executor.getGrade() > getGradeExec())
 		throw AForm::GradeTooLowException();
-	execute(executor);
 }
 
 std::ostream& operator<<(std::ostream& out, const AForm& name)

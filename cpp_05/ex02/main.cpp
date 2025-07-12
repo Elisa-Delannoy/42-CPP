@@ -6,7 +6,7 @@
 /*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 10:33:14 by edelanno          #+#    #+#             */
-/*   Updated: 2025/07/10 18:44:38 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/07/12 15:36:48 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,39 +26,39 @@ int main()
 	
 	AForm* form = new PresidentialPardonForm("test aform");
 
-	bur.executeAForm(pres);
-	toto.executeAForm(pres);
+	bur.executeForm(pres);
+	toto.executeForm(pres);
 	toto.signAForm(pres);
 	bur.signAForm(pres);
-	bur.executeAForm(pres);
-	toto.executeAForm(pres);
+	bur.executeForm(pres);
+	toto.executeForm(pres);
 	std::cout << std::endl;
-
-	bur.executeAForm(rob);
-	toto.executeAForm(rob);
+	
+	bur.executeForm(rob);
+	toto.executeForm(rob);
 	toto.signAForm(rob);
 	bur.signAForm(rob);
-	bur.executeAForm(rob);
-	bur.executeAForm(rob);
-	bur.executeAForm(rob);
-	bur.executeAForm(rob);
-	toto.executeAForm(rob);
+	bur.executeForm(rob);
+	bur.executeForm(rob);
+	bur.executeForm(rob);
+	bur.executeForm(rob);
+	toto.executeForm(rob);
 	std::cout << std::endl;
 
-	bur.executeAForm(tree);
-	toto.executeAForm(tree);
+	bur.executeForm(tree);
+	toto.executeForm(tree);
 	toto.signAForm(tree);
 	bur.signAForm(tree);
-	bur.executeAForm(tree);
-	toto.executeAForm(tree);
+	bur.executeForm(tree);
+	toto.executeForm(tree);
 	std::cout << std::endl;
 
-	bur.executeAForm(*form);
-	toto.executeAForm(*form);
+	bur.executeForm(*form);
+	toto.executeForm(*form);
 	toto.signAForm(*form);
 	bur.signAForm(*form);
-	bur.executeAForm(*form);
-	toto.executeAForm(*form);
+	bur.executeForm(*form);
+	toto.executeForm(*form);
 	std::cout << std::endl;
 
 	delete form;

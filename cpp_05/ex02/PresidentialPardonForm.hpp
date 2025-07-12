@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edelanno <edelanno <edelanno@student.42    +#+  +:+       +#+        */
+/*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/10 11:46:42 by edelanno          #+#    #+#             */
-/*   Updated: 2025/07/10 14:31:15 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/07/12 15:08:03 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ class PresidentialPardonForm : public AForm
 		~PresidentialPardonForm();
 
 		void	execute(Bureaucrat const & executor) const;
-
 };
 
 

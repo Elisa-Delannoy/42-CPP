@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edelanno <edelanno <edelanno@student.42    +#+  +:+       +#+        */
+/*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 10:33:07 by edelanno          #+#    #+#             */
-/*   Updated: 2025/07/10 15:40:03 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/07/12 15:03:09 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name)
 		else if (grade > 150)
 			throw Bureaucrat::GradeTooLowException();
 	}
-	catch(const std::exception& e)
+	catch (const std::exception& e)
 	{
 		std::cout << e.what() << std::endl;
 	}
@@ -97,7 +97,7 @@ void	Bureaucrat::signForm(Form& form)
 		form.beSigned(*this);
 		std::cout << this->_name << " signed " << form.getName() << std::endl;
 	}
-	catch(const std::exception& e)
+	catch (const std::exception& e)
 	{
 		std::cout << this->_name << " couldn't sign " << form.getName() 
 			<< " because " << e.what() << std::endl;

@@ -6,7 +6,7 @@
 /*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/10 14:38:03 by edelanno          #+#    #+#             */
-/*   Updated: 2025/07/10 18:42:02 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/07/12 15:43:07 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ RobotomyRequestForm::~RobotomyRequestForm()
 
 void	RobotomyRequestForm::execute(Bureaucrat const & executor) const
 {
-	(void) executor;
+	check_exec(executor);
 	std::cout << "Drilling noises: vrrrrrr -> ";
 	
 	if (rand() % 2 == 0)

@@ -6,7 +6,7 @@
 /*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 10:33:07 by edelanno          #+#    #+#             */
-/*   Updated: 2025/07/10 18:26:52 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/07/12 15:44:35 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,7 +104,7 @@ void	Bureaucrat::signAForm(AForm& Aform)
 	}
 }
 
-void	Bureaucrat::executeAForm(AForm const & Aform) const
+void	Bureaucrat::executeForm(AForm const & Aform) const
 {
 	try
 	{

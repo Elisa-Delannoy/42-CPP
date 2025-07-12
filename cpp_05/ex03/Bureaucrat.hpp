@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edelanno <edelanno <edelanno@student.42    +#+  +:+       +#+        */
+/*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 10:33:12 by edelanno          #+#    #+#             */
-/*   Updated: 2025/07/10 15:35:01 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/07/12 15:44:32 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ class Bureaucrat
 		void				increment_b();
 		void				decrement_b();
 		void				signAForm(AForm& AForm);
-		void				executeAForm(AForm const & AForm) const;
+		void				executeForm(AForm const & AForm) const;
 		
 		class GradeTooHighException : public std::exception
 		{
