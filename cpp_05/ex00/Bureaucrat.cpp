@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
+/*   By: edelanno <edelanno <edelanno@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 10:33:07 by edelanno          #+#    #+#             */
-/*   Updated: 2025/07/12 18:53:46 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/07/12 23:02:02 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ Bureaucrat::Bureaucrat() : _name("default"), _grade(100)
 	std::cout << "default bureaucrat constructor called" << std::endl;
 }
 
-Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name)
+Bureaucrat::Bureaucrat(const std::string& name, int grade) : _name(name)
 {
 	std::cout << this->_name << " name and grade bureaucrat constructor called" << std::endl;
 	if (grade < 1)
@@ -70,7 +70,7 @@ int	Bureaucrat::getGrade() const
 void  Bureaucrat::increment_b()
 {
 	if (this->_grade == 1)
-		std::cout << "Grade is already highest grade, impossible to increment" << std::endl;
+		std::cerr << "Grade is already highest grade, impossible to increment" << std::endl;
 	else
 		this->_grade--;
 }
@@ -78,7 +78,7 @@ void  Bureaucrat::increment_b()
 void	Bureaucrat::decrement_b()
 {
 	if (this->_grade == 150)
-		std::cout << "Grade is already lowest grade, impossible to decrement" << std::endl;
+		std::cerr << "Grade is already lowest grade, impossible to decrement" << std::endl;
 	else
 		this->_grade++;
 }

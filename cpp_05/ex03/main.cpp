@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
+/*   By: edelanno <edelanno <edelanno@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 10:33:14 by edelanno          #+#    #+#             */
-/*   Updated: 2025/07/12 17:38:52 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/07/12 23:04:58 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int main()
 		}
 		catch (const std::exception& e)
 		{
-			std::cout << bur.getName() << " couldn't execute " << rrf->getName()
+			std::cerr << bur.getName() << " couldn't execute " << rrf->getName()
 				<< " because " << e.what() << std::endl;
 		}
 	}
@@ -48,7 +48,7 @@ int main()
 		}
 		catch (const std::exception& e)
 		{
-			std::cout << bur.getName() << " couldn't execute " << rrf1->getName()
+			std::cerr << bur.getName() << " couldn't execute " << rrf1->getName()
 				<< " because " << e.what() << std::endl;
 		}
 	}
@@ -61,7 +61,7 @@ int main()
 		}
 		catch (const std::exception& e)
 		{
-			std::cout << bur.getName() << " couldn't execute " << rrf1->getName()
+			std::cerr << bur.getName() << " couldn't execute " << rrf1->getName()
 				<< " because " << e.what() << std::endl;
 		}
 	}
@@ -78,7 +78,7 @@ int main()
 		}
 		catch (const std::exception& e)
 		{
-			std::cout << bur.getName() << " couldn't execute " << rrf2->getName()
+			std::cerr << bur.getName() << " couldn't execute " << rrf2->getName()
 				<< " because " << e.what() << std::endl;
 		}
 	}
@@ -96,7 +96,7 @@ int main()
 		}
 		catch (const std::exception& e)
 		{
-			std::cout << bur.getName() << " couldn't execute " << rrf3->getName()
+			std::cerr << bur.getName() << " couldn't execute " << rrf3->getName()
 				<< " because " << e.what() << std::endl;
 		}
 	}

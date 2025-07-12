@@ -30,7 +30,7 @@ AForm::AForm(std::string name,int grade_sign, int grade_exec) : _name(name), _si
 	}
 	catch(const std::exception& e)
 	{
-		std::cout << e.what() << std::endl;
+		std::cerr << e.what() << std::endl;
 	}
 }
 

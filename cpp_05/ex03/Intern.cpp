@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Intern.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
+/*   By: edelanno <edelanno <edelanno@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/10 18:47:11 by edelanno          #+#    #+#             */
-/*   Updated: 2025/07/12 17:36:07 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/07/12 23:02:46 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,6 @@ AForm*	Intern::makeForm(std::string name, std::string target)
 			return (new ShrubberyCreationForm(target));
 		}
 	}
-	std::cout << name << " does not exist" << std::endl;
+	std::cerr << name << " does not exist" << std::endl;
 	return (0);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
+/*   By: edelanno <edelanno <edelanno@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 10:33:07 by edelanno          #+#    #+#             */
-/*   Updated: 2025/07/12 18:50:46 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/07/12 23:01:29 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ Bureaucrat::Bureaucrat() : _name("default"), _grade(100)
 {
 }
 
-Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name)
+Bureaucrat::Bureaucrat(const std::string& name, int grade) : _name(name)
 {
 	if (grade < 1)
 		throw Bureaucrat::GradeTooHighException();
@@ -65,7 +65,7 @@ int	Bureaucrat::getGrade() const
 void  Bureaucrat::increment_b()
 {
 	if (this->_grade == 1)
-		std::cout << "Grade is already highest grade, impossible to increment" << std::endl;
+		std::cerr << "Grade is already highest grade, impossible to increment" << std::endl;
 	else
 		this->_grade--;
 }
@@ -73,7 +73,7 @@ void  Bureaucrat::increment_b()
 void	Bureaucrat::decrement_b()
 {
 	if (this->_grade == 150)
-		std::cout << "Grade is already lowest grade, impossible to decrement" << std::endl;
+		std::cerr << "Grade is already lowest grade, impossible to decrement" << std::endl;
 	else
 		this->_grade++;
 }
@@ -87,7 +87,7 @@ void	Bureaucrat::signAForm(AForm& Aform)
 	}
 	catch(const std::exception& e)
 	{
-		std::cout << this->_name << " couldn't sign " << Aform.getName() 
+		std::cerr << this->_name << " couldn't sign " << Aform.getName() 
 			<< " because " << e.what() << std::endl;
 	}
 }
@@ -102,7 +102,7 @@ void	Bureaucrat::executeForm(AForm const & Aform) const
 	}
 	catch(const std::exception& e)
 	{
-		std::cout << this->_name << " couldn't execute " << Aform.getName() 
+		std::cerr << this->_name << " couldn't execute " << Aform.getName() 
 			<< " because " << e.what() << std::endl;
 	}
 }
