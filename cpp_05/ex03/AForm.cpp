@@ -20,9 +20,7 @@ AForm::AForm() : _name("default"), _signed(false), _grade_sign(5), _grade_exec(2
 
 AForm::AForm(std::string name,int grade_sign, int grade_exec) : _name(name), _signed(false),
 													_grade_sign(grade_sign), _grade_exec(grade_exec)
-{
-	// std::cout << this->_name << " name and grade AForm constructor called" << std::endl;
-	try
+{	try
 	{
 		if (_grade_sign < 1 || _grade_exec < 1)
 			throw AForm::GradeTooHighException();
@@ -37,14 +35,11 @@ AForm::AForm(std::string name,int grade_sign, int grade_exec) : _name(name), _si
 
 AForm::AForm(const AForm& copy) : _name(copy._name), _grade_sign(copy._grade_sign), _grade_exec(copy._grade_exec)
 {
-	// std::cout << "copy AForm constructor called" << std::endl;
 	this->_signed = copy._signed;
 }
 
 AForm& AForm::operator=(const AForm& new_aform) 
 {
-	// std::cout << "assignment operator AForm constructor called" << std::endl;
-	
 	if (this != &new_aform)
 		this->_signed = new_aform._signed;
 	return (*this);
@@ -52,9 +47,7 @@ AForm& AForm::operator=(const AForm& new_aform)
 
 AForm::~AForm()
 {
-	// std::cout << "default AForm destructor called" << std::endl;
 }
-
 
 const char* AForm::GradeTooHighException::what() const throw()
 {
@@ -120,7 +113,7 @@ std::ostream& operator<<(std::ostream& out, const AForm& name)
 		sign_status = "signed";
 	else
 		sign_status = "not signed";
-	out <<"AForm: " << name.getName() << ", is " << name.getSigned()
+	out <<"AForm: " << name.getName() << " is " << sign_status
 		<< ", grade required to sign this Aform is " << name.getGradeSign()
 		<< " and grade required to execute it is " << name.getGradeExec();
 	return (out);

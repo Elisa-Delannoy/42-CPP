@@ -6,7 +6,7 @@
 /*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 10:33:07 by edelanno          #+#    #+#             */
-/*   Updated: 2025/07/12 15:44:35 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/07/12 18:56:11 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,35 +15,23 @@
 
 Bureaucrat::Bureaucrat() : _name("default"), _grade(100)
 {
-	// std::cout << "default bureaucrat constructor called" << std::endl;
 }
 
 Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name)
 {
-	// std::cout << this->_name << " name and grade bureaucrat constructor called" << std::endl;
-	try
-	{
-		if (grade < 1)
-			throw Bureaucrat::GradeTooHighException();
-		else if (grade > 150)
-			throw Bureaucrat::GradeTooLowException();
-	}
-	catch(const std::exception& e)
-	{
-		std::cout << e.what() << std::endl;
-	}
+	if (grade < 1)
+		throw Bureaucrat::GradeTooHighException();
+	else if (grade > 150)
+		throw Bureaucrat::GradeTooLowException();
 	this->_grade = grade;
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat& copy) : _name(copy._name), _grade(copy._grade)
 {
-	// std::cout << "copy bureaucrat constructor called" << std::endl;
 }
 
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat& new_bureaucrat) 
 {
-	// std::cout << "assignment operator bureaucrat constructor called" << std::endl;
-	
 	if (this != &new_bureaucrat)
 		this->_grade = new_bureaucrat._grade;
 	return (*this);
@@ -51,7 +39,6 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat& new_bureaucrat)
 
 Bureaucrat::~Bureaucrat()
 {
-	// std::cout << "default bureaucrat destructor called" << std::endl;
 }
 
 const char* Bureaucrat::GradeTooHighException::what() const throw()
@@ -109,6 +96,7 @@ void	Bureaucrat::executeForm(AForm const & Aform) const
 	try
 	{
 		Aform.check_exec(*this);
+		Aform.execute(*this);
 		std::cout << this->_name << " executed " << Aform.getName() << std::endl;
 	}
 	catch(const std::exception& e)

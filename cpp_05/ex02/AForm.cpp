@@ -114,8 +114,8 @@ std::ostream& operator<<(std::ostream& out, const AForm& name)
 		sign_status = "signed";
 	else
 		sign_status = "not signed";
-	out <<"AForm: " << name.getName() << ", is " << name.getSigned()
-		<< ", grade required to sign this Aform is " << name.getGradeSign()
+	out << "AForm: " << name.getName() << " is " << sign_status
+		<< ", grade required to sign this form is " << name.getGradeSign()
 		<< " and grade required to execute it is " << name.getGradeExec();
 	return (out);
 }

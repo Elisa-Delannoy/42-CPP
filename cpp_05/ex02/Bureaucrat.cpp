@@ -6,7 +6,7 @@
 /*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 10:33:07 by edelanno          #+#    #+#             */
-/*   Updated: 2025/07/12 15:44:09 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/07/12 18:50:46 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,17 +19,10 @@ Bureaucrat::Bureaucrat() : _name("default"), _grade(100)
 
 Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name)
 {
-	try
-	{
-		if (grade < 1)
-			throw Bureaucrat::GradeTooHighException();
-		else if (grade > 150)
-			throw Bureaucrat::GradeTooLowException();
-	}
-	catch(const std::exception& e)
-	{
-		std::cout << e.what() << std::endl;
-	}
+	if (grade < 1)
+		throw Bureaucrat::GradeTooHighException();
+	else if (grade > 150)
+		throw Bureaucrat::GradeTooLowException();
 	this->_grade = grade;
 }
 
@@ -104,6 +97,7 @@ void	Bureaucrat::executeForm(AForm const & Aform) const
 	try
 	{
 		Aform.check_exec(*this);
+		Aform.execute(*this);
 		std::cout << this->_name << " executed " << Aform.getName() << std::endl;
 	}
 	catch(const std::exception& e)

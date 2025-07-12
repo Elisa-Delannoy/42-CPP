@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edelanno <edelanno <edelanno@student.42    +#+  +:+       +#+        */
+/*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 15:23:15 by edelanno          #+#    #+#             */
-/*   Updated: 2025/07/10 16:21:18 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/07/12 18:16:02 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,8 +108,8 @@ std::ostream& operator<<(std::ostream& out, const Form& name)
 		sign_status = "signed";
 	else
 		sign_status = "not signed";
-	out <<"AForm: " << name.getName() << ", is " << name.getSigned()
-		<< ", grade required to sign this Aform is " << name.getGradeSign()
+	out <<"Form: " << name.getName() << " is " << sign_status
+		<< ", grade required to sign this form is " << name.getGradeSign()
 		<< " and grade required to execute it is " << name.getGradeExec();
 	return (out);
 }
