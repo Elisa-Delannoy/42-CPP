@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Intern.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edelanno <edelanno <edelanno@student.42    +#+  +:+       +#+        */
+/*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/10 18:47:11 by edelanno          #+#    #+#             */
-/*   Updated: 2025/07/12 23:02:46 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/07/13 11:49:05 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ Intern::~Intern()
 {
 }
 
-AForm*	Intern::makeForm(std::string name, std::string target)
+AForm*	Intern::makeForm(const std::string& name, const std::string& target)
 {
 	std::string	check[3] = {"robotomy request", "presidential pardon", "shrubbery creation"};
 	

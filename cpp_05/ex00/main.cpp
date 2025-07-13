@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edelanno <edelanno <edelanno@student.42    +#+  +:+       +#+        */
+/*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 10:33:14 by edelanno          #+#    #+#             */
-/*   Updated: 2025/07/12 22:37:39 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/07/13 11:34:36 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,11 @@ int main()
 		Bureaucrat bur("bob", 1);
 		
 		std::cout << "\n" << bur << std::endl;
-		bur.increment_b();
 		bur.decrement_b();
-		std::cout << bur << std::endl;
+		std::cout << "\n" << bur << std::endl;
+		bur.increment_b();
 		std::cout << bur << "\n" << std::endl;
+		bur.increment_b();
 	}
 	catch(const std::exception& e)
 	{

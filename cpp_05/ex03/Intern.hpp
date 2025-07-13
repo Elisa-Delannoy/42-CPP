@@ -6,7 +6,7 @@
 /*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/10 18:47:14 by edelanno          #+#    #+#             */
-/*   Updated: 2025/07/10 18:56:11 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/07/13 11:48:52 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class Intern
 		Intern& operator=(const Intern& new_intern);
 		~Intern();
 
-		AForm*	makeForm(std::string name, std::string target);
+		AForm*	makeForm(const std::string& name, const std::string& target);
 };
 
 #endif

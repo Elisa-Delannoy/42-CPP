@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edelanno <edelanno <edelanno@student.42    +#+  +:+       +#+        */
+/*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 10:33:07 by edelanno          #+#    #+#             */
-/*   Updated: 2025/07/12 23:02:02 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/07/13 11:31:10 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ int	Bureaucrat::getGrade() const
 void  Bureaucrat::increment_b()
 {
 	if (this->_grade == 1)
-		std::cerr << "Grade is already highest grade, impossible to increment" << std::endl;
+		throw Bureaucrat::GradeTooHighException();
 	else
 		this->_grade--;
 }
@@ -78,7 +78,7 @@ void  Bureaucrat::increment_b()
 void	Bureaucrat::decrement_b()
 {
 	if (this->_grade == 150)
-		std::cerr << "Grade is already lowest grade, impossible to decrement" << std::endl;
+		throw Bureaucrat::GradeTooLowException();
 	else
 		this->_grade++;
 }
