@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edelanno <edelanno <edelanno@student.42    +#+  +:+       +#+        */
+/*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 10:33:14 by edelanno          #+#    #+#             */
-/*   Updated: 2025/07/12 22:47:40 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/07/13 15:02:09 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ int main()
 	{
 		Bureaucrat	bur("bob", 1);
 		Bureaucrat	toto("toto", 70);
-		Form		forms("convention", 3);
-		Form		f("law", 30);
+		Form		forms("convention", 3, 55);
+		Form		f("law", 30, 100);
 
 		std::cout << forms << "\n" << std::endl;
 		toto.signForm(forms);

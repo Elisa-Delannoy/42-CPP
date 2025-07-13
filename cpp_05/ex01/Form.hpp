@@ -6,7 +6,7 @@
 /*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 15:23:18 by edelanno          #+#    #+#             */
-/*   Updated: 2025/07/09 17:38:47 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/07/13 14:49:48 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ class Form
 
 	public:
 		Form();
-		Form(std::string name, int grade);
+		Form(std::string name, int grade_sign, int grade_exec);
 		Form(const Form& copy);
 		Form& operator=(const Form& new_form);
 		~Form();

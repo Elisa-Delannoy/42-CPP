@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edelanno <edelanno <edelanno@student.42    +#+  +:+       +#+        */
+/*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 15:23:15 by edelanno          #+#    #+#             */
-/*   Updated: 2025/07/12 22:43:23 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/07/13 15:01:30 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,34 +19,30 @@ Form::Form() : _name("default"), _signed(false), _grade_sign(5), _grade_exec(20)
 	std::cout << "default Form constructor called" << std::endl;
 }
 
-Form::Form(std::string name, int grade) : _name(name), _signed(false), _grade_sign(5), _grade_exec(20)
+Form::Form(std::string name, int grade_sign, int grade_exec) : _name(name), _signed(false),
+									_grade_sign(grade_sign), _grade_exec(grade_exec)
 {
 	std::cout << this->_name << " name and grade Form constructor called" << std::endl;
-	try
-	{
-		if (grade < 1)
-			throw Form::GradeTooHighException();
-		else if (grade > 150)
-			throw Form::GradeTooLowException();
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << std::endl;
-	}
+	
+	if (grade_sign < 1)
+		throw Form::GradeTooHighException();
+	else if (grade_sign > 150)
+		throw Form::GradeTooLowException();
 }
 
-Form::Form(const Form& copy) : _name(copy._name), _grade_sign(5), _grade_exec(20)
+Form::Form(const Form& copy) : _name(copy._name), _grade_sign(copy._grade_sign), _grade_exec(copy._grade_exec)
 {
 	std::cout << "copy Form constructor called" << std::endl;
 	this->_signed = copy._signed;
 }
 
-Form& Form::operator=(const Form& new_form) 
+Form& Form::operator=(const Form& new_form)
 {
 	std::cout << "assignment operator Form constructor called" << std::endl;
 	
 	if (this != &new_form)
 		this->_signed = new_form._signed;
+		
 	return (*this);
 }
 

@@ -19,7 +19,7 @@ AForm::AForm() : _name("default"), _signed(false), _grade_sign(5), _grade_exec(2
 }
 
 AForm::AForm(std::string name,int grade_sign, int grade_exec) : _name(name), _signed(false),
-													_grade_sign(grade_sign), _grade_exec(grade_exec)
+										_grade_sign(grade_sign), _grade_exec(grade_exec)
 {
 	try
 	{

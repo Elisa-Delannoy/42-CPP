@@ -20,17 +20,11 @@ AForm::AForm() : _name("default"), _signed(false), _grade_sign(5), _grade_exec(2
 
 AForm::AForm(std::string name,int grade_sign, int grade_exec) : _name(name), _signed(false),
 													_grade_sign(grade_sign), _grade_exec(grade_exec)
-{	try
-	{
-		if (_grade_sign < 1 || _grade_exec < 1)
+{
+	if (_grade_sign < 1 || _grade_exec < 1)
 			throw AForm::GradeTooHighException();
-		else if (_grade_sign > 150 || _grade_exec > 150)
+	else if (_grade_sign > 150 || _grade_exec > 150)
 			throw AForm::GradeTooLowException();
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << std::endl;
-	}
 }
 
 AForm::AForm(const AForm& copy) : _name(copy._name), _grade_sign(copy._grade_sign), _grade_exec(copy._grade_exec)
