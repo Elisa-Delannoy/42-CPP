@@ -6,7 +6,7 @@
 /*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/10 14:38:03 by edelanno          #+#    #+#             */
-/*   Updated: 2025/07/13 11:39:29 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/07/13 15:17:27 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 
 RobotomyRequestForm::RobotomyRequestForm() : AForm(), _target("default")
 {
-	std::srand(std::time(0));
 }
 
 RobotomyRequestForm::RobotomyRequestForm(std::string target) : AForm("RobotomyRequestForm", 72, 45), _target(target)
@@ -39,12 +38,12 @@ RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm& n
 
 RobotomyRequestForm::~RobotomyRequestForm()
 {
-
 }
 
 void	RobotomyRequestForm::execute(Bureaucrat const & executor) const
 {
 	check_exec(executor);
+	std::srand(std::time(0));
 	std::cout << "Drilling noises: vrrrrrr -> ";
 	
 	if (std::rand() % 2 == 0)

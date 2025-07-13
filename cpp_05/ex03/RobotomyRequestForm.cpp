@@ -6,7 +6,7 @@
 /*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/10 14:38:03 by edelanno          #+#    #+#             */
-/*   Updated: 2025/07/12 15:45:04 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/07/13 15:14:09 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 
 RobotomyRequestForm::RobotomyRequestForm() : AForm(), _target("default")
 {
-	std::srand(std::time(0));
 }
 
 RobotomyRequestForm::RobotomyRequestForm(std::string target) : AForm("RobotomyRequestForm", 72, 45), _target(target)
@@ -45,9 +44,10 @@ RobotomyRequestForm::~RobotomyRequestForm()
 void	RobotomyRequestForm::execute(Bureaucrat const & executor) const
 {
 	check_exec(executor);
+	std::srand(std::time(0));
 	std::cout << "Drilling noises: vrrrrrr -> ";
 	
-	if (rand() % 2 == 0)
+	if (std::rand() % 2 == 0)
 		std::cout << this->_target << " has been robotomized" << std::endl;
 	else
 		std::cout << this->_target << " robotomy failed" << std::endl;

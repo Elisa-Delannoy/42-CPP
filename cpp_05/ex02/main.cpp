@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edelanno <edelanno <edelanno@student.42    +#+  +:+       +#+        */
+/*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 10:33:14 by edelanno          #+#    #+#             */
-/*   Updated: 2025/07/12 22:56:05 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/07/13 16:13:46 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,16 +30,16 @@ int main()
 		
 		bur.executeForm(pres);
 		toto.executeForm(pres);
-		toto.signAForm(pres);
-		bur.signAForm(pres);
+		toto.signForm(pres);
+		bur.signForm(pres);
 		bur.executeForm(pres);
 		toto.executeForm(pres);
 		std::cout << std::endl;
 		
 		bur.executeForm(rob);
 		toto.executeForm(rob);
-		toto.signAForm(rob);
-		bur.signAForm(rob);
+		toto.signForm(rob);
+		bur.signForm(rob);
 		bur.executeForm(rob);
 		bur.executeForm(rob);
 		bur.executeForm(rob);
@@ -55,16 +55,16 @@ int main()
 		
 		bur.executeForm(tree);
 		toto.executeForm(tree);
-		toto.signAForm(tree);
-		bur.signAForm(tree);
+		toto.signForm(tree);
+		bur.signForm(tree);
 		bur.executeForm(tree);
 		toto.executeForm(tree);
 		std::cout << std::endl;
 		
 		bur.executeForm(*form);
 		toto.executeForm(*form);
-		toto.signAForm(*form);
-		bur.signAForm(*form);
+		toto.signForm(*form);
+		bur.signForm(*form);
 		bur.executeForm(*form);
 		toto.executeForm(*form);
 		std::cout << std::endl;
