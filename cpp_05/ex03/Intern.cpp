@@ -6,7 +6,7 @@
 /*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/10 18:47:11 by edelanno          #+#    #+#             */
-/*   Updated: 2025/07/13 11:49:05 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/07/13 12:32:34 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,31 +37,31 @@ Intern::~Intern()
 AForm*	Intern::makeForm(const std::string& name, const std::string& target)
 {
 	std::string	check[3] = {"robotomy request", "presidential pardon", "shrubbery creation"};
-	
+	AForm*		(Intern::*form[3])(const std::string) = {&Intern::Shrubbery, &Intern::Presidential, &Intern::Robotomy};
+
 	int i = 0;
 	while (i < 3 && name.compare(check[i]))
 		i++;
-
-	switch(i)
+	if (i < 3)
 	{
-		case (0):
-		{
-			std::cout << "Intern creates " << check[i] << std::endl;
-			return (new RobotomyRequestForm(target));
-		}
-
-		case (1):
-		{
-			std::cout << "Intern creates " << check[i] << std::endl;
-			return (new PresidentialPardonForm(target));
-		}
-
-		case (2):
-		{
-			std::cout << "Intern creates " << check[i] << std::endl;
-			return (new ShrubberyCreationForm(target));
-		}
+		std::cout << "Intern creates " << check[i] << std::endl;
+		return ((this->*form[i])(target));
 	}
 	std::cerr << name << " does not exist" << std::endl;
 	return (0);
+}
+
+AForm*	Intern::Shrubbery(const std::string target)
+{
+	return (new ShrubberyCreationForm(target));
+}
+
+AForm*	Intern::Presidential(const std::string target)
+{
+	return (new PresidentialPardonForm(target));
+}
+
+AForm*	Intern::Robotomy(const std::string target)
+{
+	return (new RobotomyRequestForm(target));
 }
