@@ -6,7 +6,7 @@
 /*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/07 08:07:53 by edelanno          #+#    #+#             */
-/*   Updated: 2025/07/08 13:11:43 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/07/14 14:10:05 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,7 @@ MateriaSource::~MateriaSource()
 
 MateriaSource::MateriaSource(const MateriaSource& copy)
 {
-	for (int i = 0; i < 4; i++)
-	{
-		delete _stock[i];
-		_stock[i] = copy._stock[i]->clone();
-	}
+	*this = copy;
 }
 
 MateriaSource& MateriaSource::operator=(const MateriaSource& new_MateriaSource)
@@ -40,8 +36,12 @@ MateriaSource& MateriaSource::operator=(const MateriaSource& new_MateriaSource)
 	{
 		for (int i = 0; i < 4; i++)
 		{
-			delete _stock[i];
-			_stock[i] = new_MateriaSource._stock[i]->clone();
+			if (_stock[i])
+				delete _stock[i];
+			if (new_MateriaSource._stock[i])
+				_stock[i] = new_MateriaSource._stock[i]->clone();
+			else
+				_stock[i] = 0;
 		}
 	}
 	return (*this);

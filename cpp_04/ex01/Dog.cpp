@@ -6,7 +6,7 @@
 /*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/05 18:47:47 by edelanno          #+#    #+#             */
-/*   Updated: 2025/07/06 14:52:03 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/07/14 13:13:27 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,11 @@ Dog&	Dog::operator=(const Dog& new_dog)
 	if (this != &new_dog)
 	{
 		Animal::operator=(new_dog);
+		if (this->_brain)
+		{
+			delete this->_brain;
+			this->_brain = new Brain(*new_dog._brain);
+		}
 		_type = new_dog._type;
 	}
 	return (*this);

@@ -6,7 +6,7 @@
 /*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/05 18:54:24 by edelanno          #+#    #+#             */
-/*   Updated: 2025/07/07 09:46:54 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/07/14 13:12:31 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,11 @@ Cat&	Cat::operator=(const Cat& new_cat)
 	if (this != &new_cat)
 	{
 		Animal::operator=(new_cat);
+		if (this->_brain)
+		{
+			delete this->_brain;
+			this->_brain = new Brain(*new_cat._brain);
+		}
 		_type = new_cat._type;
 	}
 	return (*this);

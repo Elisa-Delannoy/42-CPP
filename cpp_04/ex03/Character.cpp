@@ -6,7 +6,7 @@
 /*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/06 17:20:59 by edelanno          #+#    #+#             */
-/*   Updated: 2025/07/08 15:06:22 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/07/14 14:06:15 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,12 +34,7 @@ Character::~Character()
 
 Character::Character(const Character& copy)
 {
-	_name = copy._name;
-	for (int i = 0; i < 4; i++)
-	{
-		delete _inventory[i];
-		_inventory[i] = copy._inventory[i]->clone();
-	}
+	*this = copy;
 }
 
 Character& Character::operator=(const Character& new_character)
@@ -49,8 +44,12 @@ Character& Character::operator=(const Character& new_character)
 		_name = new_character._name;
 		for (int i = 0; i < 4; i++)
 		{
-			delete _inventory[i];
-			_inventory[i] = new_character._inventory[i]->clone();
+			if (_inventory[i])
+				delete _inventory[i];
+			if (new_character._inventory[i])
+				_inventory[i] = new_character._inventory[i]->clone();
+			else
+				_inventory[i] = 0;
 		}
 	}
 	return (*this);
