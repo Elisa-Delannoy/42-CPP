@@ -6,7 +6,7 @@
 /*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 10:33:14 by edelanno          #+#    #+#             */
-/*   Updated: 2025/07/13 16:13:46 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/07/14 12:51:46 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,16 +41,6 @@ int main()
 		toto.signForm(rob);
 		bur.signForm(rob);
 		bur.executeForm(rob);
-		bur.executeForm(rob);
-		bur.executeForm(rob);
-		bur.executeForm(rob);
-		bur.executeForm(rob);
-		bur.executeForm(rob);
-		bur.executeForm(rob);
-		bur.executeForm(rob);
-		bur.executeForm(rob);
-		bur.executeForm(rob);
-		toto.executeForm(rob);
 		std::cout << std::endl;
 		
 		bur.executeForm(tree);

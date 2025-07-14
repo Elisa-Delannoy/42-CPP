@@ -6,7 +6,7 @@
 /*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 10:33:14 by edelanno          #+#    #+#             */
-/*   Updated: 2025/07/13 11:34:36 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/07/14 11:52:47 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,9 +52,9 @@ int main()
 	{
 		Bureaucrat low("toto", 150);
 
-		low.decrement_b();
 		low.increment_b();
 		std::cout << low << "\n" << std::endl;
+		low.decrement_b();
 	}
 	catch(const std::exception& e)
 	{

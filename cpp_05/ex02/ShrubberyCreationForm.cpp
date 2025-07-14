@@ -6,7 +6,7 @@
 /*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/10 13:50:06 by edelanno          #+#    #+#             */
-/*   Updated: 2025/07/12 15:43:02 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/07/14 12:09:04 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,26 +51,16 @@ void	ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 		return;
 	}
 
-	shrubbery << "       _-_       \n";
-	shrubbery << "    /~~   ~~\\    \n";
-	shrubbery << " /~~         ~~\\ \n";
-	shrubbery << "{               }\n";
-	shrubbery << " \\  _-     -_  / \n";
-	shrubbery << "   ~  \\\\ //  ~   \n";
-	shrubbery << "_- -   | | _- _  \n";
-	shrubbery << "  _ -  | |   -_  \n";
-	shrubbery << "      // \\\\      \n";
-	shrubbery << "                    \n";
-
-	shrubbery << "       _-_       \n";
-	shrubbery << "    /~~   ~~\\    \n";
-	shrubbery << " /~~         ~~\\ \n";
-	shrubbery << "{               }\n";
-	shrubbery << " \\  _-     -_  / \n";
-	shrubbery << "   ~  \\\\ //  ~   \n";
-	shrubbery << "_- -   | | _- _  \n";
-	shrubbery << "  _ -  | |   -_  \n";
-	shrubbery << "      // \\\\      \n";
+	shrubbery << "       _-_       	        _-_       	\n";
+	shrubbery << "    /~~   ~~\\          /~~   ~~\\    	\n";
+	shrubbery << " /~~         ~~\\    /~~         ~~\\ 	\n";
+	shrubbery << "{               }	 {               }	\n";
+	shrubbery << " \\  _-     -_  /    \\  _-     -_  / 	\n";
+	shrubbery << "   ~  \\\\ //  ~        ~  \\\\ //  ~  	\n";
+	shrubbery << "_- -   | | _- _  	 _- -   | | _- _  	\n";
+	shrubbery << "  _ -  | |   -_  	   _ -  | |   -_  	\n";
+	shrubbery << "      // \\\\              // \\\\     	\n";
+	shrubbery << "                                     	\n";
 
 	shrubbery.close();	
 }

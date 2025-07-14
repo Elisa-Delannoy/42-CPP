@@ -6,7 +6,7 @@
 /*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/10 13:50:06 by edelanno          #+#    #+#             */
-/*   Updated: 2025/07/12 17:15:55 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/07/14 13:03:22 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,25 +51,16 @@ void	ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 		return;
 	}
 
-	shrubbery << "       _-_       \n";
-	shrubbery << "    /~~   ~~\\    \n";
-	shrubbery << " /~~         ~~\\ \n";
-	shrubbery << "{               }\n";
-	shrubbery << " \\  _-     -_  / \n";
-	shrubbery << "   ~  \\\\ //  ~   \n";
-	shrubbery << "_- -   | | _- _  \n";
-	shrubbery << "  _ -  | |   -_  \n";
-	shrubbery << "      // \\\\      \n\n\n";
-
-	shrubbery << "       _-_       \n";
-	shrubbery << "    /~~   ~~\\    \n";
-	shrubbery << " /~~         ~~\\ \n";
-	shrubbery << "{               }\n";
-	shrubbery << " \\  _-     -_  / \n";
-	shrubbery << "   ~  \\\\ //  ~   \n";
-	shrubbery << "_- -   | | _- _  \n";
-	shrubbery << "  _ -  | |   -_  \n";
-	shrubbery << "      // \\\\      \n";
+	shrubbery << "       _-_       	        _-_       	\n";
+	shrubbery << "    /~~   ~~\\          /~~   ~~\\    	\n";
+	shrubbery << " /~~         ~~\\    /~~         ~~\\ 	\n";
+	shrubbery << "{               }	 {               }	\n";
+	shrubbery << " \\  _-     -_  /    \\  _-     -_  / 	\n";
+	shrubbery << "   ~  \\\\ //  ~        ~  \\\\ //  ~  	\n";
+	shrubbery << "_- -   | | _- _  	 _- -   | | _- _  	\n";
+	shrubbery << "  _ -  | |   -_  	   _ -  | |   -_  	\n";
+	shrubbery << "      // \\\\              // \\\\     	\n";
+	shrubbery << "                                     	\n";
 
 	shrubbery.close();	
 }

@@ -6,7 +6,7 @@
 /*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 10:33:14 by edelanno          #+#    #+#             */
-/*   Updated: 2025/07/13 16:13:36 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/07/14 13:03:03 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int main()
 	Intern	 someRandomIntern1;
 	AForm* rrf1;
 	rrf1 = someRandomIntern1.makeForm("shrubbery creation", "Bender");
-	if (rrf)
+	if (rrf1)
 	{
 		bur.executeForm(*rrf1);
 		bur.signForm(*rrf1);
