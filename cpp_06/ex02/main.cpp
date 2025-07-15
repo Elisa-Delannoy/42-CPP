@@ -6,7 +6,7 @@
 /*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 16:40:44 by edelanno          #+#    #+#             */
-/*   Updated: 2025/07/15 17:10:19 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/07/15 17:30:07 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	identify(Base& p)
 {
 	try
 	{
-		if (dynamic_cast<A*>(&p))
+		(void) dynamic_cast<A&>(p);
 			std::cout << "A" << std::endl;
 	}
 	catch(...)
@@ -52,7 +52,7 @@ void	identify(Base& p)
 	}
 	try
 	{
-		if (dynamic_cast<B*>(&p))
+		(void) dynamic_cast<B&>(p);
 			std::cout << "B" << std::endl;
 	}
 	catch(...)
@@ -60,7 +60,7 @@ void	identify(Base& p)
 	}
 	try
 	{
-		if (dynamic_cast<C*>(&p))
+		(void) dynamic_cast<C&>(p);
 			std::cout << "C" << std::endl;
 	}
 	catch(...)
@@ -93,4 +93,3 @@ int	main()
 	delete test1;
 	delete test2;
 }
-

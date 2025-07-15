@@ -6,7 +6,7 @@
 #    By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/13 13:38:48 by edelanno          #+#    #+#              #
-#    Updated: 2025/07/15 16:47:31 by edelanno         ###   ########.fr        #
+#    Updated: 2025/07/15 17:21:35 by edelanno         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = type
 
 CFLAGS = c++ -Wall -Wextra -Werror -std=c++98
 
-SRC = main.cpp Base.cpp A.cpp B.cpp C.cpp
+SRC = main.cpp Base.cpp
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)

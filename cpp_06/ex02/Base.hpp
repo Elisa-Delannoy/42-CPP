@@ -6,7 +6,7 @@
 /*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 15:51:53 by edelanno          #+#    #+#             */
-/*   Updated: 2025/07/15 16:04:15 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/07/15 17:37:31 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,6 @@ class Base
 {
 	public:
 		virtual ~Base();
-
-		Base*	generate(void);
-		void 	identify(Base* p);
-		void 	identify(Base& p);
 };
 
 
