@@ -6,7 +6,7 @@
 /*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/13 13:39:26 by edelanno          #+#    #+#             */
-/*   Updated: 2025/07/14 19:44:44 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/07/15 13:39:59 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,8 @@ enum	type
 	FLOAT,
 	DOUBLE,
 	ERROR,
-	NINFF,
-	INFF,
-	NANF,
-	NINF,
-	INF,
-	NAN
+	FLITERALS,
+	DLITERALS,
 };
 
 class ScalarConverter

@@ -6,11 +6,11 @@
 #    By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/13 13:38:48 by edelanno          #+#    #+#              #
-#    Updated: 2025/07/13 13:39:19 by edelanno         ###   ########.fr        #
+#    Updated: 2025/07/15 11:24:01 by edelanno         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = scalar
+NAME = convert
 
 CFLAGS = c++ -Wall -Wextra -Werror -std=c++98
 
