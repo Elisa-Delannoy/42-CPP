@@ -1,31 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Array.hpp                                          :+:      :+:    :+:   */
+/*   Array.tpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/16 16:53:17 by edelanno          #+#    #+#             */
-/*   Updated: 2025/07/16 17:36:10 by edelanno         ###   ########.fr       */
+/*   Created: 2025/07/16 16:57:14 by edelanno          #+#    #+#             */
+/*   Updated: 2025/07/16 17:42:28 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ARRAY_HPP
-# define ARRAY_HPP
+#ifndef ARRAY_TPP
+# define ARRAY_TPP
 
-template<typename T>
-class Array
+#include "Array.hpp"
+
+template <typename T>
+Array<T>::Array() : _arr(NULL), _size(0)
 {
-	private:
-		T*				_arr;
-		unsigned int	_size;
+}
 
-	public:
-		Array();
-		Array(unsigned int n);
-		Array(const Array& copy);
-		Array& operator=(const Array& new_array);
-		~Array();
-};
+template <typename T>
+Array<T>::Array(unsigned int n) : _arr(new T[n]), _size(n)
+{
+}
+
+template <typename T>
+Array<T>::Array(const Array& copy) 
+{
+	
+}
+
+template <typename T>
+Array<T>& Array<T>::operator=(const Array& new_array)
+{
+	
+}
+
+
+template <typename T>
+Array<T>::~Array()
+{
+	
+}
 
 #endif
