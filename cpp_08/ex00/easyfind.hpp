@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   easyfind.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
+/*   By: edelanno <edelanno <edelanno@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/17 14:03:55 by edelanno          #+#    #+#             */
-/*   Updated: 2025/07/17 15:18:45 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/07/21 15:48:22 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,27 @@
 # define EASYFIND_HPP
 
 # include <iostream>
-# include <vector>
+# include <algorithm>
 
 template<typename T>
-typename T::const_iterator easyfind(const T& container, int to_find)
+typename InputIterator easyfind(const T& container, int to_find)
 {
-	for (typename T::const_iterator it = container.begin(); it != container.end(); it++)
-	{
-		if (*it == to_find)
-			return (it);
-	}
-	return (container.end());
+  while (first!=last) {
+    if (*first==val) return first;
+    ++first;
+  }
+  return last;
 }
+
+// template<typename T>
+// typename T::const_iterator easyfind(const T& container, int to_find)
+// {
+// 	for (typename T::const_iterator it = container.begin(); it != container.end(); it++)
+// 	{
+// 		if (*it == to_find)
+// 			return (it);
+// 	}
+// 	return (container.end());
+// }
 
 #endif
