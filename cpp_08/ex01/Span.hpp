@@ -10,18 +10,19 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SPAN_hpp
+#ifndef SPAN_HPP
 # define SPAN_HPP
 
+# include <iostream>
 # include <exception>
+# include <algorithm>
 # include <vector>
 
 class Span
-{
+{ 
 	private:
-		unsigned int			_nbElement;
-		std::vector<int>		_stock:
-		vector::const_iterator	_it;
+		unsigned int		_nbElement;
+		std::vector<int>	_stock;
 
 	public:
 		Span();
@@ -30,21 +31,16 @@ class Span
 		const Span& operator=(const Span& copy);
 		~Span();
 
-		void 			addNumnber(const int& nb);
+		void 			addNumber(const int& nb);
 		unsigned int	shortestSpan();
 		unsigned int	longestSpan();
 
-		class TooManyElementsException : public std::exception
+		template<typename T>
+		void 			addMultipleNumbers(const T& tab)
 		{
-			public:
-				const char* what()const throw()
+		for(typename T::const_iterator	it = tab.begin() ; it != tab.end(); it++)
+			addNumber(*it);
 		};
-
-		class NotEnoughElementException : public std::exception
-		{
-			public:
-				const char* what()const throw()
-		};
-}
+};
 
 #endif

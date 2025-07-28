@@ -11,57 +11,59 @@
 /* ************************************************************************** */
 
 #include "Span.hpp"
+#include <sstream>
 
 
-Spann::Span() : _nbElement(0)
+Span::Span() : _nbElement(0), _stock(0)
 {
 }
 
-Spann::Span(unsigned int N) : _nbElement(N)
+Span::Span(unsigned int N) : _nbElement(N), _stock(0)
 {
 }
 
-Spann::Span(const Span& copy) : _nbElement(copy._nbElement)
+Span::Span(const Span& copy) : _nbElement(copy._nbElement), _stock(copy._stock)
 {
 }
 
-const Span& Spann::operator=(const Span& copy) : _nbElement(copy._nbElement)
+const Span& Span::operator=(const Span& copy)
 {
+	this->_nbElement = copy._nbElement;
+	this->_stock = copy._stock;
 	return (*this);
 }
 
-Spann::~Span()
+Span::~Span()
 {
-
 }
 
-void 	Span:addNumnber(const int& nb)
+void 	Span::addNumber(const int& nb)
 {
-	if (_it >= nb)
-		throw TooManyElementsException()
-	_stock.push_back(nb);
-	_it++;
+	if (_stock.size() >= this->_nbElement)
+	{
+		std::ostringstream	error;
+		error << "Too many elements, can not add more than " << this->_nbElement;
+		throw std::length_error(error.str());
+	}
+	this->_stock.push_back(nb);
 }
 
 unsigned int	Span::shortestSpan()
 {
 	int	shortest;
 	int	temp;
+	std::vector<int>	sorted;
 
-	if (_it < 1)
-		throw NotEnoughElementException();
-	shortest = 0;
-
-	trier le tableau, set ?
-
-
-	shortest = _stock[1] - _stock[0];
-	for (int i = 0; i < _it, i++)
+	if (_stock.size() < 2)
+		throw std::length_error("Not enough element, span should have at least 2 elements");
+	sorted = this->_stock;
+	std::sort(sorted.begin(), sorted.end());
+	shortest = sorted[1] - sorted[0];
+	for (unsigned int i = 0; i < sorted.size() - 1; i++)
 	{
-		temp = _stock[i + 1] - _stock[i];
+		temp = sorted[i + 1] - sorted[i];
 		if (shortest > temp)
 			shortest = temp;
-		i++;
 	}
 	return (shortest);
 }
@@ -71,23 +73,14 @@ unsigned int	Span::longestSpan()
 	int	min;
 	int	max;
 
-	
-	if (_it < 1)
-		throw NotEnoughElementException();
-	min = _stock.min();
-	max = _stock.max();
+	if (this->_stock.size() < 2)
+		throw std::length_error("Not enough element, span should have at least 2 elements");
+	min = *std::min_element(_stock.begin(), _stock.end());
+	max = *std::max_element(_stock.begin(), _stock.end());
 
 	return (max - min);
 }
 
-const char* Span::TooManyElementsException::what() const throw()
-{
-	return ("Too many elements, can not add more than ");
-}
 
-const char* Span::NotEnoughElementException::what() const throw()
-{
-	return ("Not enough element, span should hae atleast 2 elements ");
-}
 
 

@@ -3,18 +3,18 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: edelanno <edelanno <edelanno@student.42    +#+  +:+       +#+         #
+#    By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/05 15:46:54 by edelanno          #+#    #+#              #
-#    Updated: 2025/07/20 15:55:25 by edelanno         ###   ########.fr        #
+#    Updated: 2025/07/28 16:47:23 by edelanno         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = find
+NAME = number
 
 CFLAGS = c++ -Wall -Wextra -Werror -std=c++98
 
-SRC = main.cpp
+SRC = main.cpp Span.cpp
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)
