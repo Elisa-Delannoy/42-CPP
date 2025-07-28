@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   easyfind.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edelanno <edelanno <edelanno@student.42    +#+  +:+       +#+        */
+/*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/17 14:03:55 by edelanno          #+#    #+#             */
-/*   Updated: 2025/07/21 15:48:22 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/07/28 09:54:06 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,16 @@
 # include <algorithm>
 
 template<typename T>
-typename InputIterator easyfind(const T& container, int to_find)
+typename T::const_iterator easyfind(const T& container, int to_find)
 {
-  while (first!=last) {
-    if (*first==val) return first;
-    ++first;
-  }
-  return last;
+	typename T::const_iterator	it;
+
+	it = std::find(container.begin(), container.end(), to_find);
+	if (it != container.end())
+		std::cout << *it << " is found" << std::endl;
+	else
+		std::cout << to_find << " is not found" << std::endl;
+	return (it);
 }
 
 // template<typename T>
