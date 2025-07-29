@@ -6,7 +6,7 @@
 /*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/17 14:03:55 by edelanno          #+#    #+#             */
-/*   Updated: 2025/07/28 09:54:06 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/07/28 14:21:13 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 # define EASYFIND_HPP
 
 # include <iostream>
+# include <sstream>
 # include <algorithm>
+# include <exception>
 
 template<typename T>
 typename T::const_iterator easyfind(const T& container, int to_find)
@@ -22,22 +24,14 @@ typename T::const_iterator easyfind(const T& container, int to_find)
 	typename T::const_iterator	it;
 
 	it = std::find(container.begin(), container.end(), to_find);
-	if (it != container.end())
-		std::cout << *it << " is found" << std::endl;
-	else
-		std::cout << to_find << " is not found" << std::endl;
+	if (it == container.end())
+	{
+		std::ostringstream	error;
+		error << to_find << " is not found";
+		throw std::runtime_error(error.str());
+	}
+	std::cout << *it << " is found" << std::endl;
 	return (it);
 }
-
-// template<typename T>
-// typename T::const_iterator easyfind(const T& container, int to_find)
-// {
-// 	for (typename T::const_iterator it = container.begin(); it != container.end(); it++)
-// 	{
-// 		if (*it == to_find)
-// 			return (it);
-// 	}
-// 	return (container.end());
-// }
 
 #endif

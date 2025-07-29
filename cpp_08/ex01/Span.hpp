@@ -36,10 +36,9 @@ class Span
 		unsigned int	longestSpan();
 
 		template<typename T>
-		void 			addMultipleNumbers(const T& tab)
+		void	addMultipleNumbers(const T& tab)
 		{
-		for(typename T::const_iterator	it = tab.begin() ; it != tab.end(); it++)
-			addNumber(*it);
+			_stock.insert(_stock.end(), tab.begin(), tab.end());
 		};
 };
 

@@ -6,7 +6,7 @@
 /*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/28 14:59:55 by edelanno          #+#    #+#             */
-/*   Updated: 2025/07/28 16:45:43 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/07/28 17:15:58 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 int	main()
 {
-	Span sp = Span(1000);
+	Span sp = Span(10000);
 	std::vector<int>	tab;
-	
-	for (int i = 0; i < 1000; i++)
+
+	for (int i = 0; i < 10000; i++)
 		tab.push_back(i);
 	try
 	{
@@ -35,5 +35,5 @@ int	main()
 	{
 		std::cerr << e.what() << '\n';
 	}
-	return 0;	
+	return 0;
 }

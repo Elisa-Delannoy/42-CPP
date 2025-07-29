@@ -14,11 +14,11 @@
 #include <sstream>
 
 
-Span::Span() : _nbElement(0), _stock(0)
+Span::Span() : _nbElement(0)
 {
 }
 
-Span::Span(unsigned int N) : _nbElement(N), _stock(0)
+Span::Span(unsigned int N) : _nbElement(N)
 {
 }
 
