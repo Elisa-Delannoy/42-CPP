@@ -6,7 +6,7 @@
 /*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/13 13:39:24 by edelanno          #+#    #+#             */
-/*   Updated: 2025/07/29 12:21:30 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/07/29 12:33:35 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,11 +41,7 @@ bool	parse_to_check(std::string to_convert)
 				return (false);
 		}
 		if (to_convert[i] && !std::isdigit(to_convert[i]))
-		{
-			// if (i == static_cast<int>(to_convert.length()) - 1 && to_convert[i] == 'f')
-			// 	return (true);
 			return (false);
-		}
 	}
 	return (true);
 }
