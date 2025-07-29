@@ -6,7 +6,7 @@
 /*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/13 13:39:24 by edelanno          #+#    #+#             */
-/*   Updated: 2025/07/15 14:11:56 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/07/29 12:21:30 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,20 @@ bool	parse_to_check(std::string to_convert)
 	{
 		if (i == 0 && to_convert[0] == '-')
 			i++;
-		if (to_convert[i] && !std::isdigit(to_convert[i]) && to_convert[i] != '.')
+		if (to_convert[i] == '.')
 		{
-			if (i == static_cast<int>(to_convert.length()) - 1 && to_convert[i] == 'f')
+			if (i == static_cast<int>(to_convert.length()) - 2 && std::isdigit(to_convert[i + 1]))
 				return (true);
+			else if (i == static_cast<int>(to_convert.length()) - 3 && std::isdigit(to_convert[i + 1])
+				&& to_convert[i + 2] == 'f')
+				return (true);
+			else
+				return (false);
+		}
+		if (to_convert[i] && !std::isdigit(to_convert[i]))
+		{
+			// if (i == static_cast<int>(to_convert.length()) - 1 && to_convert[i] == 'f')
+			// 	return (true);
 			return (false);
 		}
 	}
