@@ -6,7 +6,7 @@
 #    By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/05 15:46:54 by edelanno          #+#    #+#              #
-#    Updated: 2025/07/29 17:05:09 by edelanno         ###   ########.fr        #
+#    Updated: 2025/07/31 11:16:53 by edelanno         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = btc
 
 CFLAGS = c++ -Wall -Wextra -Werror -std=c++98
 
-SRC = main.cpp
+SRC = main.cpp BitcoinExchange.cpp
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)
