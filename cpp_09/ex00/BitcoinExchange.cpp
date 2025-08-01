@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   BitcoinExchange.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
+/*   By: edelanno <edelanno <edelanno@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 17:05:27 by edelanno          #+#    #+#             */
-/*   Updated: 2025/07/31 18:08:37 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/08/01 10:56:58 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,15 +73,14 @@ void	BitcoinExchange::StockData()
 
 int	BitcoinExchange::CheckPreviousDate(std::string line)
 {
-	float	year;
-	float	month;
-	float	day;
+	int	year;
+	int	month;
+	int	day;
 
-	year = atof(line.substr(0, 4).c_str());
-	month = atof(line.substr(6, 7).c_str());
-	day = atof(line.substr(9, 10).c_str());
-
-	if (year > 2025 || year < 0)
+	year = atoi(line.substr(0, 4).c_str());
+	month = atoi(line.substr(5, 7).c_str());
+	day = atoi(line.substr(8, 10).c_str());
+	if (year < 0)
 		return (-1);
 	if (month > 12 || month < 1)
 		return (-1);
@@ -114,13 +113,20 @@ int	BitcoinExchange::CheckDate(std::string line, int *i)
 
 float	check_value(std::string line)
 {
+	for (size_t i = 1; i < line.size(); i++)
+	{
+		if (i == 1 && line[i] == '-')
+			i++;
+		if (!isdigit(line[i]) && line[i] != '.')
+			return (std::cout << "Error: bad input => " << line << std::endl, -1);
+	}
 	float	value;
 	value = atof(line.c_str());
-
+	
 	if (value < 0)
 		return (std::cout << "Error: not a positive number." << std::endl, -1);
 	else if (value > 1000)
-		return (std::cout << "Error: too large a number. => " << line << std::endl, -1);
+		return (std::cout << "Error: too large a number." << std::endl, -1);
 	return (value);
 }
 
@@ -136,6 +142,7 @@ float	BitcoinExchange::CheckInput(std::string line)
 		return (std::cout << "Error: bad input => " << line.substr(0, 10) << std::endl, -1);
 	i = i + 3;
 	value = check_value(line.substr(i));
+
 	if (value == -1)
 		return (-1);
 	return (value);
@@ -158,6 +165,8 @@ float	BitcoinExchange::FindRate(std::string line, float value)
 			it++;
 		}
 	}
+	if (it != this->_data.begin())
+		return (--it, std::cout << it->first << " => " << value << " = " << it->second * value << std::endl, 1);
 	return (1);
 }
 	

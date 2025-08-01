@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
+/*   By: edelanno <edelanno <edelanno@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 17:12:29 by edelanno          #+#    #+#             */
-/*   Updated: 2025/07/31 17:43:43 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/08/01 09:52:29 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,14 @@ int	main(int argc, char** argv)
 	
 	(void) argv;
 	if (argc != 2)
-		return (std::cerr << "Error: could not open file" << std::endl, 1);
+		return (std::cerr << "Error: could not open file." << std::endl, 1);
 	
 	BitcoinExchange	test;
 	test.StockData();
 
 	std::ifstream	input(argv[1], std::ios::in);
 	if (!input)
-		return (std::cerr << "Error: could not open file" << std::endl, 1);
+		return (std::cerr << "Error: could not open file." << std::endl, 1);
 	std::string	line;
 	std::getline(input, line);
 	if (line != "date | value")
