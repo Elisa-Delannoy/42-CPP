@@ -6,7 +6,7 @@
 /*   By: edelanno <edelanno <edelanno@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 17:05:27 by edelanno          #+#    #+#             */
-/*   Updated: 2025/08/01 10:56:58 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/08/01 11:07:01 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void	BitcoinExchange::StockData()
 	std::ifstream	file("data.csv", std::ios::in);
 	if (!file)
 	{
-		std::cerr << "Error: could not open file" << std::endl;
+		std::cerr << "Error: could not open file." << std::endl;
 		return;
 	}
 	std::string	line;
@@ -111,7 +111,7 @@ int	BitcoinExchange::CheckDate(std::string line, int *i)
 	return (1);
 }
 
-float	check_value(std::string line)
+float	BitcoinExchange::CheckValue(std::string line)
 {
 	for (size_t i = 1; i < line.size(); i++)
 	{
@@ -141,7 +141,7 @@ float	BitcoinExchange::CheckInput(std::string line)
 	if (line.compare(i, 3, " | "))
 		return (std::cout << "Error: bad input => " << line.substr(0, 10) << std::endl, -1);
 	i = i + 3;
-	value = check_value(line.substr(i));
+	value = CheckValue(line.substr(i));
 
 	if (value == -1)
 		return (-1);
@@ -170,4 +170,3 @@ float	BitcoinExchange::FindRate(std::string line, float value)
 	return (1);
 }
 	
-

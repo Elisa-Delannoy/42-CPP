@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   BitcoinExchange.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
+/*   By: edelanno <edelanno <edelanno@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 17:05:29 by edelanno          #+#    #+#             */
-/*   Updated: 2025/07/31 17:43:19 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/08/01 11:05:48 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,12 @@ class BitcoinExchange
 		const BitcoinExchange& operator=(const BitcoinExchange& copy);
 		~BitcoinExchange();
 		
-		void	StockData();
-
-		float	CheckInput(std::string line);
-		float	FindRate(std::string line, float value);
-		int		CheckDate(std::string line, int *i);
-		int		CheckPreviousDate(std::string line);
+		void		StockData();
+		float		CheckInput(std::string line);
+		float		FindRate(std::string line, float value);
+		int			CheckDate(std::string line, int *i);
+		int			CheckPreviousDate(std::string line);
+		float		CheckValue(std::string line);
 		
 };
 
