@@ -6,7 +6,7 @@
 /*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/05 12:07:26 by edelanno          #+#    #+#             */
-/*   Updated: 2025/08/05 16:19:25 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/08/05 16:41:07 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,6 @@ class RPN
 		RPN();
 		RPN(const RPN& copy);
 		const RPN& operator=(const RPN& copy);
-		// const RPN& operator+(const RPN& nb);
-		// const RPN& operator-(const RPN& nb);
-		// const RPN& operator/(const RPN& nb);
-		// const RPN& operator*(const RPN& nb);
 		~RPN();
 		
 		int		parse_input(char *argv);

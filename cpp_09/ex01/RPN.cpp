@@ -6,7 +6,7 @@
 /*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/05 12:07:23 by edelanno          #+#    #+#             */
-/*   Updated: 2025/08/05 16:36:45 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/08/05 16:41:04 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,28 +33,6 @@ const RPN& RPN::operator=(const RPN& copy)
 	}
 	return (*this);
 }
-
-// const RPN& RPN::operator+(const RPN& nb)
-// {
-// 	return (Fixed(this->_fixed + a.getRawBits()));
-// }
-
-// const RPN& RPN::operator-(const RPN& nb)
-// {
-
-// }
-
-// const RPN& RPN::operator/(const RPN& nb)
-// {
-
-// }
-
-// const RPN& RPN::operator*(const RPN& nb)
-// {
-
-// }
-
-
 
 RPN::~RPN()
 {
