@@ -6,7 +6,7 @@
 /*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/05 12:07:23 by edelanno          #+#    #+#             */
-/*   Updated: 2025/08/05 16:42:24 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/08/05 17:07:46 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,8 @@ void	RPN::do_rpn(char *argv)
 			_rpn.pop();
 			temp2 = _rpn.top();
 			_rpn.pop();
-			find_operators(input[i], temp1, temp2);
+			if (find_operators(input[i], temp1, temp2) == false)
+				return;
 		}
 	}
 	std::cout << _rpn.top() << std::endl;
