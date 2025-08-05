@@ -6,7 +6,7 @@
 /*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/05 12:07:23 by edelanno          #+#    #+#             */
-/*   Updated: 2025/08/05 16:41:04 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/08/05 16:42:24 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +95,7 @@ bool	RPN::find_operators(char c, int temp1, int temp2)
 	if (c == '/')
 	{
 		if (temp1 == 0)
-			return (std::cout << "Error: impossible to divide by 0" << std::endl, false);
+			return (std::cerr << "Error: impossible to divide by 0" << std::endl, false);
 		_value = temp2 / temp1;
 	}
 	if (c == '*')
