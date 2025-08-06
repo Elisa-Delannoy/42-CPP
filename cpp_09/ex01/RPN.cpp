@@ -6,7 +6,7 @@
 /*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/05 12:07:23 by edelanno          #+#    #+#             */
-/*   Updated: 2025/08/05 17:07:46 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/08/06 11:58:04 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,10 +57,10 @@ int	RPN::parse_input(char *argv)
 			i++;
 		}
 		else
-			return (std::cerr << "Error: invalid character for RPN" << std::endl, 0);
+			return (std::cerr << "Error" << std::endl, 0);
 	}
 	if (_operators + 1 != _nb)
-		return (std::cerr << "Error: no matching operands/operators" << std::endl, 0);
+		return (std::cerr << "Error" << std::endl, 0);
 	return (1);
 }
 
@@ -89,18 +89,24 @@ void	RPN::do_rpn(char *argv)
 
 bool	RPN::find_operators(char c, int temp1, int temp2)
 {
-	if (c == '+') 
-		_value = temp1 + temp2;
-	if (c == '-')
-		_value = temp2 - temp1;
-	if (c == '/')
+	switch(c)
 	{
-		if (temp1 == 0)
-			return (std::cerr << "Error: impossible to divide by 0" << std::endl, false);
-		_value = temp2 / temp1;
+		case ('+'):
+			_value = temp1 + temp2;
+			break;
+		case ('-'):
+			_value = temp2 - temp1;
+			break;
+		case ('/'):
+			if (temp1 == 0)
+				return (std::cerr << "Error: impossible to divide by 0" << std::endl, false);
+			_value = temp2 / temp1;
+			break;
+		case ('*'):
+			_value = temp1 * temp2;
+			break;
+		_rpn.push(_value);
+		return (true);
 	}
-	if (c == '*')
-		_value = temp1 * temp2;
-	_rpn.push(_value);
-	return (true);
+	
 }
