@@ -6,7 +6,7 @@
 /*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/05 12:07:23 by edelanno          #+#    #+#             */
-/*   Updated: 2025/08/06 11:58:04 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/08/06 13:37:48 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ RPN::~RPN()
 {
 }
 
-int	RPN::parse_input(char *argv)
+int	RPN::ParseInput(char *argv)
 {
 	std::string	input = argv;
 	std::string	operators = "+-/*";
@@ -64,7 +64,7 @@ int	RPN::parse_input(char *argv)
 	return (1);
 }
 
-void	RPN::do_rpn(char *argv)
+void	RPN::DoRpn(char *argv)
 {
 	std::string	input = argv;
 	int			temp1;
@@ -80,14 +80,14 @@ void	RPN::do_rpn(char *argv)
 			_rpn.pop();
 			temp2 = _rpn.top();
 			_rpn.pop();
-			if (find_operators(input[i], temp1, temp2) == false)
+			if (FindOperators(input[i], temp1, temp2) == false)
 				return;
 		}
 	}
 	std::cout << _rpn.top() << std::endl;
 }
 
-bool	RPN::find_operators(char c, int temp1, int temp2)
+bool	RPN::FindOperators(char c, int temp1, int temp2)
 {
 	switch(c)
 	{
@@ -105,8 +105,8 @@ bool	RPN::find_operators(char c, int temp1, int temp2)
 		case ('*'):
 			_value = temp1 * temp2;
 			break;
-		_rpn.push(_value);
-		return (true);
 	}
+	_rpn.push(_value);
+	return (true);
 	
 }
