@@ -6,7 +6,7 @@
 /*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/05 16:46:55 by edelanno          #+#    #+#             */
-/*   Updated: 2025/08/07 17:22:04 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/08/07 18:15:11 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void	PmergeMe::TabMaxMin(T tab1, T tab2)
 	}
 }
 
-void	PmergeMe::VectorFordJohnson(std::vector<int>::iterator it)
+void	PmergeMe::VectorFordJohnsonDivide(std::vector<int>::iterator it)
 {
 	if (it != this->_input.end())
 	{
@@ -66,11 +66,11 @@ void	PmergeMe::VectorFordJohnson(std::vector<int>::iterator it)
 		}
 		TabMaxMin(*it, *(it + 1));
 		if (it + 1 != this->_input.end() && it + 2 != this->_input.end())
-			VectorFordJohnson(it + 2);
+			VectorFordJohnsonDivide(it + 2);
 	}
 }
 
-int	PmergeMe::InsertSort(std::vector<int>::iterator	itmin, int begin, int end)
+int	PmergeMe::VectorFordJohnsonSort(std::vector<int>::iterator	itmin, int begin, int end)
 {
 	int part = (begin + end) / 2;
 	std::vector<int>::iterator	itmx = _vecmax.begin() + part;
@@ -80,48 +80,111 @@ int	PmergeMe::InsertSort(std::vector<int>::iterator	itmin, int begin, int end)
 		
 		if (itmx == _vecmax.begin() || (itmx != _vecmax.begin() && *itmin >= *(itmx - 1)) || *itmin == *itmx)
 			return (_vecmax.insert(itmx, *itmin), 1);
-		InsertSort(itmin, begin, part);
+		VectorFordJohnsonSort(itmin, begin, part);
 	}
 	else if (*itmin > *itmx)
 	{
 		if (itmx + 1 != _vecmax.end() && *itmin < *(itmx + 1))
 			return (_vecmax.insert(itmx + 1, *itmin), 1);
-		InsertSort(itmin, part + 1, end);
+		VectorFordJohnsonSort(itmin, part + 1, end);
 	}
 	return (0);
 }
 
-void	print(std::string print, std::vector<int> container)
+void	PmergeMe::DequeFordJohnsonDivide(std::deque<int>::iterator it)
+{
+	if (it != this->_inputdeque.end())
+	{
+		if (_input.size() % 2 != 0 && it + 1 == _inputdeque.end())
+		{
+			_vecmax.push_back(*it);
+			return ;
+		}
+		TabMaxMin(*it, *(it + 1));
+		if (it + 1 != this->_inputdeque.end() && it + 2 != this->_inputdeque.end())
+			DequeFordJohnsonDivide(it + 2);
+	}
+}
+
+int	PmergeMe::DequeFordJohnsonSort(std::deque<int>::iterator itmin, int begin, int end)
+{
+	int part = (begin + end) / 2;
+	std::deque<int>::iterator	itmx = _deqmax.begin() + part;
+
+	if (*itmin <= *itmx)
+	{
+		
+		if (itmx == _deqmax.begin() || (itmx != _deqmax.begin() && *itmin >= *(itmx - 1)) || *itmin == *itmx)
+			return (_deqmax.insert(itmx, *itmin), 1);
+		DequeFordJohnsonSort(itmin, begin, part);
+	}
+	else if (*itmin > *itmx)
+	{
+		if (itmx + 1 != _deqmax.end() && *itmin < *(itmx + 1))
+			return (_deqmax.insert(itmx + 1, *itmin), 1);
+		DequeFordJohnsonSort(itmin, part + 1, end);
+	}
+	return (0);
+}
+
+template<typename T>
+void	print(std::string print, T container)
 {
 	std::cout << print;
-	for (std::vector<int>::iterator it = container.begin(); it != container.end(); it++)
+	typename T::const_iterator	it = container.begin() ;
+	for (; it != container.end(); it++)
 		std::cout << *it << " ";
 	std::cout << std::endl;
 }
 
 // void	PmergeMe::SortTab()
 // {
-// 	for (std::)
+// 	for (std::vector<int>::iterator it = _vecmax.begin(); it != _vecmax.end(); it++)
+// 	{
+// 		if ()
+// 	}
 // }
 
-void	PmergeMe::Excec()
+void	PmergeMe::ExcecVector()
 {
-	clock_t	tvec = clock();
 	std::vector<int>::iterator	it = this->_input.begin();
 	
 	print("Before: ", this->_input);
 	
-	VectorFordJohnson(it);
+	clock_t	tvec = clock();
+	VectorFordJohnsonDivide(it);
 	std::sort(_vecmax.begin(), _vecmax.end());
 	
-	tvec = double(clock() - tvec) / CLOCKS_PER_SEC * 1000000;
 	
 	for (std::vector<int>::iterator	itmin = _vecmin.begin(); itmin != _vecmin.end(); itmin++)
-		InsertSort(itmin, 0, _vecmax.size());
+	VectorFordJohnsonSort(itmin, 0, _vecmax.size());
+	tvec = double(clock() - tvec) / CLOCKS_PER_SEC * 1000000;
 	
 	print("After:  ", this->_vecmax);
 	std::cout << "Time to process a range of:  " << _input.size() << " elements with std::vector: "
 		<< tvec << " us" << std::endl;
+}
+
+
+
+
+void	PmergeMe::ExcecDeque()
+{
+	std::deque<int>::iterator	it = this->_inputdeque.begin();
+	
+	
+	clock_t	tdeq = clock();
+	DequeFordJohnsonDivide(it);
+	std::sort(_deqmax.begin(), _deqmax.end());
+	
+	
+	for (std::deque<int>::iterator	itmin = _deqmin.begin(); itmin != _deqmin.end(); itmin++)
+	DequeFordJohnsonSort(itmin, 0, _deqmax.size());
+	tdeq = double(clock() - tdeq) / CLOCKS_PER_SEC * 1000000;
+	
+	print("After:  ", this->_deqmax);
+	std::cout << "Time to process a range of:  " << _inputdeque.size() << " elements with std::deque: "
+		<< tdeq << " us" << std::endl;
 }
 
 void	PmergeMe::ParseInput(int argc, char **argv)
@@ -139,5 +202,6 @@ void	PmergeMe::ParseInput(int argc, char **argv)
 		s_input.str("");
 		s_input.clear();
 		this->_input.push_back(nb);
+		this->_inputdeque.push_back(nb);
 	}
 }

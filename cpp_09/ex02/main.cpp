@@ -6,7 +6,7 @@
 /*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/05 16:47:05 by edelanno          #+#    #+#             */
-/*   Updated: 2025/08/07 16:46:21 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/08/07 18:06:13 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ int	main(int argc, char** argv)
 	try
 	{
 		test.ParseInput(argc, argv);
-		test.Excec();
+		test.ExcecVector();
+		test.ExcecDeque();
 	}
 	catch(const std::exception& e)
 	{
