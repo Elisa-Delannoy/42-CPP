@@ -6,7 +6,7 @@
 /*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/05 16:46:57 by edelanno          #+#    #+#             */
-/*   Updated: 2025/08/07 17:55:08 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/08/08 14:48:07 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ class PmergeMe
 		std::deque<int>		_inputdeque;
 		std::vector<int>	_vecmin;
 		std::vector<int>	_vecmax;
+		std::vector<int>	_finalmax;
 		std::deque<int>		_deqmin;
 		std::deque<int>		_deqmax;
 		
@@ -34,18 +35,15 @@ class PmergeMe
 		const PmergeMe& operator=(const PmergeMe& copy);
 		~PmergeMe();
 
-		void	VectorFordJohnsonDivide(std::vector<int>::iterator it);
-		void	DequeFordJohnsonDivide(std::deque<int>::iterator it);
-		void	ParseInput(int argc, char **argv);
-		void	ExcecVector();
-		void	ExcecDeque();
+		std::vector<int>	VectorFordJohnsonDivide(std::vector<int>& container);
+		std::deque<int>		DequeFordJohnsonDivide(std::deque<int>& container);
+		void				ParseInput(int argc, char **argv);
+		void				ExcecVector();
+		void				ExcecDeque();
 		template<typename T>
-		void	TabMaxMin(T tab1, T tab2);
-		int		VectorFordJohnsonSort(std::vector<int>::iterator itmin, int begin, int end);
-		int		DequeFordJohnsonSort(std::deque<int>::iterator itmin, int begin, int end);
-		// void	SortTab();
-		// void	InsertMin(std::vector<int>::iterator it, std::vector<int>::iterator itmx, int n);
-		// void	InsertMax(std::vector<int>::iterator it, std::vector<int>::iterator itmx);
+		void				TabMaxMin(int tab1, int tab2, T& max, T& min);
+		int					VectorFordJohnsonSort(int to_insert, int begin, int end, std::vector<int>& max);
+		int					DequeFordJohnsonSort(int to_insert, int begin, int end, std::deque<int>& max);
 };
 
 #endif
