@@ -6,7 +6,7 @@
 /*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/05 16:46:55 by edelanno          #+#    #+#             */
-/*   Updated: 2025/08/08 15:01:36 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/08/11 10:14:43 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,6 @@ const PmergeMe& PmergeMe::operator=(const PmergeMe& copy)
 	{
 		this->_input = copy._input;
 		this->_inputdeque = copy._inputdeque;
-		this->_vecmin = copy._vecmin;
-		this->_vecmax = copy._vecmax;
-		this->_deqmin = copy._deqmin;
-		this->_deqmax = copy._deqmax;
 	}
 	return (*this);
 }
@@ -179,7 +175,7 @@ void	PmergeMe::ExcecVector()
 	
 	print("After:  ", result);
 	std::cout << "Time to process a range of:  " << _input.size() << " elements with std::vector: "
-		<< std::fixed << std::setprecision(5) << tvec << " us" << std::endl;
+		<< std::fixed << std::setprecision(1) << tvec << " us" << std::endl;
 }
 
 
@@ -191,7 +187,7 @@ void	PmergeMe::ExcecDeque()
 	double tdeq = double(end - start) / CLOCKS_PER_SEC * 1000000;;
 	
 	std::cout << "Time to process a range of:  " << _inputdeque.size() << " elements with std::deque: "
-		<< std::fixed << std::setprecision(5) << tdeq << " us" << std::endl;
+		<< std::fixed << std::setprecision(1) << tdeq << " us" << std::endl;
 }
 
 void	PmergeMe::ParseInput(int argc, char **argv)

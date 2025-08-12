@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   BitcoinExchange.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edelanno <edelanno <edelanno@student.42    +#+  +:+       +#+        */
+/*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 17:05:27 by edelanno          #+#    #+#             */
-/*   Updated: 2025/08/01 11:07:01 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/08/11 10:02:53 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,10 @@ BitcoinExchange::BitcoinExchange(const BitcoinExchange& copy)
 const BitcoinExchange& BitcoinExchange::operator=(const BitcoinExchange& copy)
 {
 	if (this != &copy)
+	{
 		this->_data = copy._data;
+		this->_date = copy._date;
+	}
 	return (*this);
 }
 
@@ -65,7 +68,6 @@ void	BitcoinExchange::StockData()
 		
 		date = line.substr(0, line.find(','));
 		price = atof(line.substr(line.find(',') + 1).c_str());
-		
 		_data[date] = price;
 	}
 	file.close();

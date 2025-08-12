@@ -6,13 +6,13 @@
 #    By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/05 15:46:54 by edelanno          #+#    #+#              #
-#    Updated: 2025/08/08 14:35:31 by edelanno         ###   ########.fr        #
+#    Updated: 2025/08/11 12:08:42 by edelanno         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = PmergeMe
 
-CFLAGS = c++ -Wall -Wextra -Werror
+CFLAGS = c++ -Wall -Wextra -Werror -std=c++98
 
 SRC = main.cpp PmergeMe.cpp
 OBJ = $(SRC:.cpp=.o)

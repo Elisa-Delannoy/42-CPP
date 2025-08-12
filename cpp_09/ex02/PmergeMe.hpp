@@ -6,7 +6,7 @@
 /*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/05 16:46:57 by edelanno          #+#    #+#             */
-/*   Updated: 2025/08/08 14:48:07 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/08/11 10:18:22 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,6 @@ class PmergeMe
 	private:
 		std::vector<int>	_input;
 		std::deque<int>		_inputdeque;
-		std::vector<int>	_vecmin;
-		std::vector<int>	_vecmax;
-		std::vector<int>	_finalmax;
-		std::deque<int>		_deqmin;
-		std::deque<int>		_deqmax;
 		
 	public:
 		PmergeMe();

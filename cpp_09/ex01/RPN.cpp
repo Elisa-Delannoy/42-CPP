@@ -6,7 +6,7 @@
 /*   By: edelanno <edelanno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/05 12:07:23 by edelanno          #+#    #+#             */
-/*   Updated: 2025/08/06 13:37:48 by edelanno         ###   ########.fr       */
+/*   Updated: 2025/08/11 10:58:10 by edelanno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ const RPN& RPN::operator=(const RPN& copy)
 		this->_rpn = copy._rpn;
 		this->_operators = copy._operators;
 		this->_nb = copy._nb;
+		this->_value = copy._value;
 	}
 	return (*this);
 }
@@ -45,7 +46,9 @@ int	RPN::ParseInput(char *argv)
 	
 	for (size_t i = 0; i < input.size(); i++)
 	{
-		if (i < input.size() - 1 && isdigit(input[i]) != 0 && input[i + 1] == ' ')
+		if (input[i] == ' ')
+			continue;
+		else if (i < input.size() - 1 && isdigit(input[i]) != 0 && input[i + 1] == ' ')
 		{
 			this->_nb++;
 			i++;
